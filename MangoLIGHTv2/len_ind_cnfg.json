@@ -1,0 +1,58 @@
+{
+"AMEX": {
+    "len_ind":{
+      "add":-2,
+      "ignore":0,
+      "len":2,
+      "type":"binary"
+    }
+},
+"DINA":{
+"len_ind": {
+        "ignore": 2,
+        "len": 2,
+        "type": "binary"
+      }
+},
+"DINERS":{
+"len_ind":{
+		"len":4,
+		"type":"ascii",
+		"end_of_text":true
+		}
+},
+"DEFAULT":{
+"len_ind": {
+        "ignore": 0,
+        "len": 2,
+        "type": "binary"
+      }
+},
+"JCB":{
+"len_ind":{
+		"ignore":2,
+		"len":2,
+		"type":"binary"
+		}
+},
+"OMNIPAY":{
+"len_ind":{
+		"len":4,
+		"type":"ascii"
+		}
+},
+"UAE":{
+"len_ind":{
+		"len":2,
+		"add":-2,
+		"type":"binary"
+		}
+},
+"VISA":{
+"len_ind":{
+		"ignore":2,
+		"len":2,
+		"type":"binary"
+		}
+}
+}

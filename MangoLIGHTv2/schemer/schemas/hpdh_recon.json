@@ -1,0 +1,100 @@
+{
+   "type": "sequence",
+
+  "fields":
+    {
+        "tpdu_id":   {"type": "text",    "len": 1, "value": "binary" },
+        "tpdu_dest": {"type": "text",    "len": 2, "value": "binary" },
+        "tpdu_orig": {"type": "text",    "len": 2, "value": "binary" },
+        "mti":      {"type": "numeric", "len": 2, "value": "bcd"},
+        "data_elements":
+        {
+        "type": "bitmap_blocks",
+        "subtype": "weaved",
+        "blocks": [
+            {
+                "next_block_ind_pos": "msbit",
+                "bitmap": { "len": 8, "value": "binary"},
+                "fields": {
+                        "DE002": {"type": "text"   , "len": "lvar_bcd", "unit":"nibble", "value": "binary"},
+                        "DE003": {"type": "text"   , "len": 3, "value": "binary"},
+                        "DE004": {"type": "numeric", "len": 6, "value": "bcd"},
+                        "DE005": {},
+                        "DE006": {},
+                        "DE007": {},
+                        "DE008": {},
+                        "DE009": {},
+                        "DE010": {},
+                        "DE011": {"type": "text"   , "len": 3, "value": "binary"},
+                        "DE012": {"type": "text"   , "len": 3, "value": "binary"},
+                        "DE013": {"type": "text"   , "len": 2, "value": "binary"},
+                        "DE014": {"type": "text"   , "len": 2, "value": "binary"},
+                        "DE015": {},
+                        "DE016": {},
+                        "DE017": {},
+                        "DE018": {},
+                        "DE019": {},
+                        "DE020": {},
+                        "DE021": {},
+                        "DE022": {"type": "text"   , "len": 2, "value": "binary"},
+                        "DE023": {},
+                        "DE024": {"type": "text"   , "len": 2, "value": "binary"},
+                        "DE025": {"type": "text"   , "len": 1, "value": "binary"},
+                        "DE026": {},
+                        "DE027": {},
+                        "DE028": {},
+                        "DE029": {},
+                        "DE030": {},
+                        "DE031": {},
+                        "DE032": {},
+                        "DE033": {},
+                        "DE034": {},
+                        "DE035": {"type": "text"   , "len": "lvar_bcd", "unit":"nibble", "value": "binary"},
+                        "DE036": {},
+                        "DE037": {"type": "text"   , "len": 12},
+                        "DE038": {"type": "text"   , "len": 6},
+                        "DE039": {"type": "text"   , "len": 2},
+                        "DE040": {},
+                        "DE041": {"type": "text"   , "len": 8},
+                        "DE042": {"type": "text"   , "len": 15},
+                        "DE043": {"type": "text"   , "len": 40},
+                        "DE044": {"type": "text"   , "len": 40},
+                        "DE045": {"type": "text"   , "len": "lvar_bcd", "unit":"nibble", "value": "binary"},
+                        "DE046": {},
+                        "DE047": {"type": "text"   , "len": "lvar_bcd", "unit":"nibble", "value": "binary"},
+                        "DE048": {"type": "text"   , "len": "lvar_bcd", "unit":"nibble", "value": "binary"},
+                        "DE049": {},
+                        "DE050": {},
+                        "DE051": {},
+
+                        "DE052": {"type": "text"   , "len": 8,             "value": "binary"},
+                        "DE053": {"type": "text"   , "len": 8,             "value": "binary"},
+                        "DE054": {"type": "text"   , "len": "llvar_bcd"},
+                        "DE055": {
+                                 "type": "tag_len_val",
+                                 "len": "llvar_bcd",
+                                 "tag_id": {"type": "text", "value": "binary", "len": {"type":"ber_tag_id"}},
+                                 "tag_val":{"type": "text", "value": "binary", "len": {"type":"ber_tag_val"}}
+                                 },
+
+                        "DE056": {},
+                        "DE057": {},
+                        "DE058": {},
+                        "DE059": {},
+                        "DE060": {"type": "text"   , "len": "llvar_bcd"},
+                        "DE061": {"type": "text"   , "len": "llvar_bcd"},
+                        "DE062": {"type": "text"   , "len": "llvar_bcd"},
+                        "DE063": {"type": "text"   , "len": "llvar_bcd"},
+                        "DE063": {"type": "text"   , "len": "llvar_bcd"},
+                        "DE064": {"type": "text"   , "len": 8,             "value":"binary"}
+                }
+            },
+            {
+              "next_block_ind_pos": "msbit",
+                "bitmap": { "len": 8, "value": "binary"},
+                "fields": {}
+            }
+        ]
+        }
+    }
+}

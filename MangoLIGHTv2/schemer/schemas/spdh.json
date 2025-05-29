@@ -1,0 +1,39 @@
+{
+"type": "sequence",
+"fields":
+    {
+    "dvc_type"   :{"type":"text", "len":2},
+    "trans_num"  :{"type":"text", "len":2},
+    "term_id"    :{"type":"text", "len":16},
+    "clearc_id"  :{"type":"text", "len":6},
+    "curr_dat"   :{"type":"text", "len":6},
+    "curr_tim"   :{"type":"text", "len":6},
+    "msg_type"   :{"type":"text", "len":1},
+    "msg_subtype":{"type":"text", "len":1},
+    "txn_code"   :{"type":"text", "len":2},
+    "proc_flgs"  :{"type":"text", "len":3},
+    "resp_code"  :{"type":"text", "len":3},
+    "opt_flds"     :{"type":"delimiter_separated_fields",
+                   "starts_with_sep": true,
+                   "delimiter":28,
+                   "fld_id": {"type": "text", "len": 1},
+                   "fields":
+                        {
+                        "6":
+                            {
+                            "type":"delimiter_separated_fields",
+                            "delimiter":30,
+                            "starts_with_sep": true,
+                            "fld_id": {"type": "text", "len": 1}
+                            },
+                        "9":
+                            {
+                            "type":"delimiter_separated_fields",
+                            "delimiter":30,
+                            "starts_with_sep": true,
+                            "fld_id": {"type": "text", "len": 1}
+                            }
+                        }
+                  }
+    }
+}

@@ -1,0 +1,11 @@
+{
+   "type": "sequence",
+
+  "fields":
+    {
+        "tpdu_id":   {"type": "text",    "len": 1, "value": "binary" },
+        "tpdu_dest": {"type": "text",    "len": 2, "value": "binary" },
+        "tpdu_orig": {"type": "text",    "len": 2, "value": "binary" },
+        "mti":      {"type": "numeric", "len": 2, "value": "bcd"}
+    }
+}

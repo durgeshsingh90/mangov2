@@ -1,0 +1,419 @@
+{
+  "HPDH":
+  {
+                        "parsing_rules":
+                            {
+                            "auth":  [{"loc_key": ["mti"], "operator": "IN", "value": [100, 110, 120, 130]}],
+                            "fin":   [{"loc_key": ["mti"], "operator": "IN", "value": [200, 210, 220, 230]}],
+                            "rvsl":  [{"loc_key": ["mti"], "operator": "IN", "value": [400, 410, 420, 430]}],
+                            "recon": [{"loc_key": ["mti"], "operator": "IN", "value": [500, 510]}],
+                            "nmm":   [{"loc_key": ["mti"], "operator": "IN", "value": [800, 810]}]
+                            },
+                        "building_rules":
+                            {
+                            "auth":  [{"loc_key": ["mti"], "operator": "IN", "value": [100, 110, 120, 130]}],
+                            "fin":   [{"loc_key": ["mti"], "operator": "IN", "value": [200, 210, 220, 230]}],
+                            "rvsl":  [{"loc_key": ["mti"], "operator": "IN", "value": [400, 410, 420, 430]}],
+                            "recon": [{"loc_key": ["mti"], "operator": "IN", "value": [500, 510]}],
+                            "nmm":   [{"loc_key": ["mti"], "operator": "IN", "value": [800, 810]}]
+                            },
+                        "msg_types":
+                            {
+                            "hdr"  :"schemas/hpdh_hdr.json",
+                            "auth" :"schemas/hpdh.json",
+                            "fin"  :"schemas/hpdh.json",
+                            "rvsl" :"schemas/hpdh.json",
+                            "recon":"schemas/hpdh_recon.json",
+                            "nmm"  :"schemas/hpdh.json"
+                            }
+                        },
+  "CTAP":               "schemas/ctap.json",
+  "MERCURY":            "schemas/mercury.json",
+  "OMNIPAY":            "schemas/omnipay.json",
+  "JCB"    :            "schemas/jcb.json",
+  "CUP"    :            "schemas/cup.json",
+  "DINERS" :            "schemas/diners.json",
+  "VISA_DMS":           {
+                        "building_rules":
+                            {
+                            "base":        [{"loc_key": ["reject_header"], "operator": "==", "value": null}],
+                            "reject":      [{"loc_key": ["reject_header"], "operator": "!=", "value": null}]
+                            },
+
+                        "parsing_rules":
+                            {
+                            "base":        [{"loc_key": ["header", "len"], "operator": "==", "value": "16"}],
+                            "reject":      [{"loc_key": ["header", "len"], "operator": "==", "value": "1A"}]
+                            },
+                        "msg_types":
+                            {
+                            "hdr_len" :"schemas/visa_hdr_len.json",
+                            "base":"schemas/visa_dms.json",
+                            "reject" :"schemas/visa_dms_reject.json"
+                            }
+                        },
+  "VISA_SMS":           {
+                        "building_rules":
+                            {
+                            "base":        [{"loc_key": ["reject_header"], "operator": "==", "value": null}],
+                            "reject":      [{"loc_key": ["reject_header"], "operator": "!=", "value": null}]
+                            },
+
+                        "parsing_rules":
+                            {
+                            "base":        [{"loc_key": ["header", "len"], "operator": "==", "value": "16"}],
+                            "reject":      [{"loc_key": ["header", "len"], "operator": "==", "value": "1A"}]
+                            },
+                        "msg_types":
+                            {
+                            "hdr_len" :"schemas/visa_hdr_len.json",
+                            "base":"schemas/visa_sms.json",
+                            "reject" :"schemas/visa_sms_reject.json"
+                            }
+                        },
+  "DINA"   :            "schemas/dina.json",
+  "BNET"   :            "schemas/bnet.json",
+  "UAE"   :             "schemas/uae.json",
+  "MADA"   :            "schemas/mada.json",
+  "MDS"    :            "schemas/mds.json",
+  "MDS_DE048":             {
+                        "parsing_rules":
+                            {
+                            "with_tran_cat_cde":        [{"loc_key": [[0,1]], "operator": "IS NOT", "value": "DIGIT"}],
+                            "without_tran_cat_cdebase": [{"loc_key": [[0,1]], "operator": "IS",     "value": "DIGIT"}]
+                            },
+                        "building_rules":
+                            {
+                            "with_tran_cat_cde":     [{"loc_key": ["tran_cat_cde"], "operator": "!=", "value": null}],
+                            "without_tran_cat_cde":  [{"loc_key": ["tran_cat_cde"], "operator": "==", "value": null}]
+                            },
+                        "msg_types":
+                            {
+                            "base" :"schemas/mds_de048.json",
+                            "with_tran_cat_cde":"schemas/mds_de048_with_tran_cat_cde.json",
+                            "without_tran_cat_cdebase" :"schemas/mds_de048_without_tran_cat_cde.json"
+
+                            }
+                        },
+  "ERRS"   :            "schemas/errs.json",
+  "DHS"    :            "schemas/dhs.json",
+  "BIC_ISO":            {
+                        "parsing_rules":
+                            {
+                            "pos":  [{"loc_key": ["header"], "operator": "STARTS", "value": "ISO02"}],
+                            "atm":  [{"loc_key": ["header"], "operator": "STARTS", "value": "ISO01"}],
+                            "base": [{"loc_key": ["header"], "operator": "STARTS", "value": "ISO00"}]
+                            },
+                        "building_rules":
+                            {
+                            "pos": [{"loc_key": ["header"], "operator": "STARTS", "value": "ISO02"}],
+                            "atm": [{"loc_key": ["header"], "operator": "STARTS", "value": "ISO01"}],
+                            "base":[{"loc_key": ["header"], "operator": "STARTS", "value": "ISO00"}]
+                            },
+                        "msg_types":
+                            {
+                            "hdr" :"schemas/bic_iso_hdr.json",
+                            "base":"schemas/bic_iso.json",
+                            "atm" :"schemas/bic_iso_atm.json",
+                            "pos" :"schemas/bic_iso_pos.json"
+                            }
+                        },
+  "BIC_ISO_PLANET":    "schemas/bic_iso_planet.json",
+  "HISO_87":            {
+                        "parsing_rules":
+                          {
+							"base":[{"loc_key": ["header"], "operator": "STARTS", "value": "ISO00"}],
+                            "pos": [{"loc_key": ["header"], "operator": "STARTS", "value": "ISO02"}],
+                            "atm": [{"loc_key": ["header"], "operator": "STARTS", "value": "ISO01"}]
+                          },
+                        "building_rules":
+                            {
+							"base":[{"loc_key": ["header"], "operator": "STARTS", "value": "ISO00"}],
+                            "pos": [{"loc_key": ["header"], "operator": "STARTS", "value": "ISO02"}],
+                            "atm": [{"loc_key": ["header"], "operator": "STARTS", "value": "ISO01"}]
+                            },                        "msg_types":
+                            {
+                            "hdr" :"schemas/hiso_87_hdr.json",
+                            "base":"schemas/hiso_87.json",
+                            "atm" :"schemas/hiso_87_atm.json",
+                            "pos" :"schemas/hiso_87_pos.json"}
+                            },
+  "HISO_87_BIN_BITMAP": {
+                        "parsing_rules":
+                          {
+							"base":[{"loc_key": ["header"], "operator": "STARTS", "value": "ISO00"}],
+                            "pos": [{"loc_key": ["header"], "operator": "STARTS", "value": "ISO02"}],
+                            "atm": [{"loc_key": ["header"], "operator": "STARTS", "value": "ISO01"}]
+                          },
+                        "building_rules":
+                            {
+							"base":[{"loc_key": ["header"], "operator": "STARTS", "value": "ISO00"}],
+                            "pos": [{"loc_key": ["header"], "operator": "STARTS", "value": "ISO02"}],
+                            "atm": [{"loc_key": ["header"], "operator": "STARTS", "value": "ISO01"}]
+                            },                        "msg_types":
+                            {
+                            "hdr" :"schemas/hiso_87_bin_bitmap_hdr.json",
+                            "base":"schemas/hiso_87_bin_bitmap.json",
+                            "atm" :"schemas/hiso_87_bin_bitmap_atm.json",
+                            "pos" :"schemas/hiso_87_bin_bitmap_pos.json"}
+                            },
+  "HISO_93":            "schemas/hiso_93.json",
+  "FIRST_VISION":       "schemas/first_vision.json",
+  "SPDH":               "schemas/spdh.json",
+  "LINK":               "schemas/link.json",
+  "FALCON":             {
+                        "parsing_rules":
+                            {
+                            "rq":[{"loc_key": ["eh_tran_code"], "operator": "STARTS",  "value": "1"}],
+                            "rs":[{"loc_key": ["eh_tran_code"], "operator": "STARTS",  "value": "2"}]
+                            },
+                        "building_rules":
+                            {
+                            "rq":[{"loc_key": ["eh_tran_code"], "operator": "STARTS",  "value": "1"}],
+                            "rs":[{"loc_key": ["eh_tran_code"], "operator": "STARTS",  "value": "2"}]
+                            },
+                        "msg_types":
+                           {
+                            "hdr":"schemas/falcon_hdr.json",
+                            "rq" :"schemas/falcon_rq.json",
+                            "rs" :"schemas/falcon_rs.json"}
+                           },
+  "AMEX":               "schemas/amex.json",
+  "TLF_DATA_REC":       "schemas/tlf_data_rec.json",
+
+  "RTF":          {
+                      "parsing_rules":
+                            {
+                            "rtf_echo_rq": [{"loc_key": [], "operator": "CONTAINS", "value": "<RqType>Echo</RqType>"}],
+                            "rtf_atm_rq":  [{"loc_key": [], "operator": "CONTAINS", "value": "<RqType>TLFX</RqType>"}],
+                            "rtf_pos_rq":  [{"loc_key": [], "operator": "CONTAINS", "value": "<RqType>PTLFX</RqType>"}],
+                            "rtf_admin_rq":[{"loc_key": [], "operator": "CONTAINS", "value": "<RqType>TLFX-ADMIN</RqType>"}],
+                            "rs":[{"loc_key": [], "operator": "CONTAINS", "value": "<RTFDataRs>"}]
+                            },
+                      "building_rules":
+                            {
+                            "rtf_echo_rq":    [{"loc_key": ["rtf_data_rq", "rq_type"], "operator": "==", "value": "Echo"}],
+                            "rtf_atm_rq":     [{"loc_key": ["rtf_data_rq", "rq_type"], "operator": "==", "value": "TLFX"}],
+                            "rtf_pos_rq":     [{"loc_key": ["rtf_data_rq", "rq_type"], "operator": "==", "value": "PTLFX"}],
+                            "rtf_admin_rq":   [{"loc_key": ["rtf_data_rq", "rq_type"], "operator": "==", "value": "TLFX-ADMIN"}],
+                            "rs":[{"loc_key": ["rtf_data_rs"], "operator": "!=", "value": null}]
+                            },
+                      "msg_types": {
+                        "txt":"schemas/rtf_txt_only.json",
+                        "rtf_echo_rq"   :"schemas/rtf_echo_rq.json",
+                        "rtf_atm_rq"   :"schemas/rtf_atm_rq.json",
+                        "rtf_pos_rq"   :"schemas/rtf_pos_rq.json",
+                        "rtf_admin_rq" :"schemas/rtf_admin_rq.json",
+                        "rs" :"schemas/rtf_rs.json"}
+                      },
+
+  "RTF_ADMIN":        {
+                      "parsing_rules":
+                            {
+                            "rtf_admin_term_setl_rq": [{"loc_key": ["rtf_data_rq","data", [103, 105]], "operator": "IN", "value": ["05", "06", "09", "96", "98"]}],
+                            "rtf_admin_setl_ttl_rq" : [{"loc_key": ["rtf_data_rq","data", [103, 105]], "operator": "IN", "value": ["20", "21", "22", "99"]}]
+                            },
+                      "building_rules":
+                            {
+                            "rtf_admin_term_setl_rq": [{"loc_key": ["rtf_data_rq","data", "term_setl_admin_cde"], "operator": "IN", "value": ["05", "06", "09", "96", "98"]}],
+                            "rtf_admin_setl_ttl_rq" : [{"loc_key": ["rtf_data_rq","data", "setl_ttl_admin_cde"],  "operator": "IN", "value": ["20", "21", "22", "99"]}]
+                            },
+
+                      "msg_types":
+                      {
+                        "rtf_admin_base_rq"     : "schemas/rtf_admin_base_rq.json",
+                        "rtf_admin_term_setl_rq": "schemas/rtf_admin_term_setl_rq.json",
+                        "rtf_admin_setl_ttl_rq" : "schemas/rtf_admin_setl_ttl_rq.json"
+                      }
+                      },
+  "GALAXY":           "schemas/galaxy.json",
+  "NCR":              {
+                      "parsing_rules":
+                            {
+                            "fin_rq":[{"loc_key": ["0"], "operator": "==", "value": "11"}],
+                            "fin_rs":[{"loc_key": ["0"], "operator": "==", "value": "4"}],
+                            "sol_ready":
+                                [
+                                    {"loc_key": ["0"],       "operator": "==", "value": "22"},
+                                    {"loc_key": ["3",[0,1]], "operator": "IN", "value": ["B", "9"]}
+                                ],
+                            "sol_dev_fault":
+                                [
+                                    {"loc_key": ["0"],       "operator": "==", "value": "22"},
+                                    {"loc_key": ["3",[0,1]], "operator": "==", "value": "8"}
+                                ],
+                            "unsol":
+                                [
+                                    {"loc_key": ["0"],       "operator": "==", "value": "12"},
+                                    {"loc_key": ["3",[0,1]], "operator": "IN", "value": ["E", "P", "G",  "c", "y"]}
+                                ],
+                            "term_cmd":
+                                [
+                                    {"loc_key": ["0"],       "operator": "==", "value": "1"}
+                                ]
+                            },
+                      "building_rules":
+                            {
+                                "fin_rq":
+                                [
+                                    {"loc_key": ["0","msq_class"],     "operator": "==", "value": "1"},
+                                    {"loc_key": ["0","msq_sub_class"], "operator": "==", "value": "1"}
+                                ],
+                                "fin_rs":
+                                [
+                                    {"loc_key": ["0","msq_class"], "operator": "==", "value": "4"}
+                                ],
+                                "sol_ready":
+                                [
+                                    {"loc_key": ["0","msq_class"],                   "operator": "==", "value": "2"},
+                                    {"loc_key": ["0","msq_sub_class"],               "operator": "==", "value": "2"},
+                                    {"loc_key": ["3","status_desc",[0,1]],"operator": "IN" ,"value": ["B", "9"]}
+                                ],
+                                "sol_dev_fault":
+                                [
+                                    {"loc_key": ["0","msq_class"],     "operator": "==", "value": "2"},
+                                    {"loc_key": ["0","msq_sub_class"], "operator": "==", "value": "2"},
+                                    {"loc_key": ["3","status_desc"],   "operator": "==" ,"value": "8"}
+                                ],
+                                "unsol":
+                                [
+                                    {"loc_key": ["0","msq_class"],     "operator": "==", "value": "1"},
+                                    {"loc_key": ["0","msq_sub_class"], "operator": "==", "value": "2"},
+                                    {"loc_key": ["3","dig"],           "operator": "IN" ,"value": ["E", "P", "G",  "c"]}
+                                ],
+                                "term_cmd":
+                                [
+                                    {"loc_key": ["0","msq_class"],     "operator": "==", "value": "1"},
+                                    {"loc_key": ["0","msq_sub_class"], "operator": "==", "value": null}
+                                ]
+                            },
+
+                      "msg_types":
+                            {
+                            "base":"schemas/ndc.json",
+                            "fin_rq" :"schemas/ncr_fin_rq.json",
+                            "fin_rs" :"schemas/ncr_fin_rs.json",
+                            "sol_ready":"schemas/ndc_sol_ready.json",
+                            "sol_dev_fault":"schemas/ndc_sol_dev_fault.json",
+                            "unsol":"schemas/ndc_unsol.json",
+                            "term_cmd":"schemas/ndc_term_cmd.json"
+                            }
+                      },
+  "NCR_OPT_FLDS":
+            {
+                     "msg_types":
+                        {
+                         "rq":"schemas/ncr_opt_flds_rq.json",
+                         "rs":"schemas/ncr_opt_flds_rs.json"
+                        }
+            },
+
+  "WINCOR":              {
+                      "parsing_rules":
+                            {
+                            "fin_rq":[{"loc_key": ["0"], "operator": "==", "value": "11"}],
+                            "fin_rs":[{"loc_key": ["0"], "operator": "==", "value": "4"}],
+                            "sol_ready":
+                                [
+                                    {"loc_key": ["0"],       "operator": "==", "value": "22"},
+                                    {"loc_key": ["3",[0,1]], "operator": "IN", "value": ["B", "9"]}
+                                ],
+                            "sol_dev_fault":
+                                [
+                                    {"loc_key": ["0"],       "operator": "==", "value": "22"},
+                                    {"loc_key": ["3",[0,1]], "operator": "==", "value": "8"}
+                                ],
+                            "unsol":
+                                [
+                                    {"loc_key": ["0"],       "operator": "==", "value": "12"},
+                                    {"loc_key": ["3",[0,1]], "operator": "IN", "value": ["E", "P", "R",  "G",  "c", "q", "r"]}
+                                ],
+                            "term_cmd":
+                                [
+                                    {"loc_key": ["0"],       "operator": "==", "value": "1"}
+                                ]
+                            },
+                      "building_rules":
+                            {
+                                "fin_rq":
+                                [
+                                    {"loc_key": ["0","msq_class"],     "operator": "==", "value": "1"},
+                                    {"loc_key": ["0","msq_sub_class"], "operator": "==", "value": "1"}
+                                ],
+                                "fin_rs":
+                                [
+                                    {"loc_key": ["0","msq_class"], "operator": "==", "value": "4"}
+                                ],
+                                "sol_ready":
+                                [
+                                    {"loc_key": ["0","msq_class"],                   "operator": "==", "value": "2"},
+                                    {"loc_key": ["0","msq_sub_class"],               "operator": "==", "value": "2"},
+                                    {"loc_key": ["3","status_desc",[0,1]],"operator": "IN" ,"value": ["B", "9"]}
+                                ],
+                                "sol_dev_fault":
+                                [
+                                    {"loc_key": ["0","msq_class"],     "operator": "==", "value": "2"},
+                                    {"loc_key": ["0","msq_sub_class"], "operator": "==", "value": "2"},
+                                    {"loc_key": ["3","status_desc"],   "operator": "==" ,"value": "8"}
+                                ],
+                                "unsol":
+                                [
+                                    {"loc_key": ["0","msq_class"],     "operator": "==", "value": "1"},
+                                    {"loc_key": ["0","msq_sub_class"], "operator": "==", "value": "2"},
+                                    {"loc_key": ["3","dig"],           "operator": "IN" ,"value": ["E", "P", "R",  "G",  "c", "q", "r"]}
+                                ],
+                                "term_cmd":
+                                [
+                                    {"loc_key": ["0","msq_class"],     "operator": "==", "value": "1"},
+                                    {"loc_key": ["0","msq_sub_class"], "operator": "==", "value": null}
+                                ]
+                            },
+
+                      "msg_types":
+                            {
+                            "base":"schemas/ndc.json",
+                            "fin_rq" :"schemas/wincor_fin_rq.json",
+                            "fin_rs" :"schemas/wincor_fin_rs.json",
+                            "sol_ready":"schemas/ndc_sol_ready.json",
+                            "sol_dev_fault":"schemas/ndc_sol_dev_fault.json",
+                            "unsol":"schemas/ndc_unsol.json",
+                            "term_cmd":"schemas/ndc_term_cmd.json"
+
+                            }
+                      },
+  "WINCOR_OPT_FLDS":
+            {
+                     "msg_types":
+                        {
+                         "rq":"schemas/wincor_opt_flds_rq.json",
+                         "rs":"schemas/wincor_opt_flds_rs.json"
+                        }
+            },
+
+  "TOKENS"    :       "schemas/tokens.json",
+  "TOKENS_RTF":       "schemas/tokens_rtf.json",
+  "TKN_B1":
+            {
+                "msg_types":
+                {
+                    "base":"schemas/tkn_b1.json",
+                    "visa":"schemas/tkn_b1_visa.json",
+                    "bnet":"schemas/tkn_b1_bnet.json",
+                    "amex":"schemas/tkn_b1_amex.json"
+                },
+                "parsing_rules":
+                {
+                    "visa":[{"loc_key": ["FIID"], "operator": "IN", "value": ["VISD", "VISS"]}],
+                    "bnet":[{"loc_key": ["FIID"], "operator": "==", "value": "BNET"}],
+                    "amex":[{"loc_key": ["FIID"], "operator": "==", "value": "AXCI"}]
+
+                },
+                "building_rules":
+                {
+                    "visa":[{"loc_key": ["FIID"], "operator": "IN", "value": ["VISD", "VISS"]}],
+                    "bnet":[{"loc_key": ["FIID"], "operator": "==", "value": "BNET"}],
+                    "amex":[{"loc_key": ["FIID"], "operator": "==", "value": "AXCI"}]
+
+                }
+            }
+}

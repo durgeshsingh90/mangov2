@@ -1,0 +1,83 @@
+{
+    "type": "sequence",
+    "fields":
+    {
+        "xml_header":{"type": "text","len":{"type":"delimiter", "delimiter":"<RTFDataRq>"}},
+        "rtf_data_rq_start_tag":{"type": "text","len":11},
+        "rtf_data_rq":
+            {
+            "type": "sequence",
+            "len":{"type":"delimiter", "delimiter":"</RTFDataRq>"},
+            "fields":
+                {
+                "rq_type_start_tag":{"type": "text","len":8},
+                "rq_type":{"type": "text","len":{"type":"delimiter", "delimiter":"</RqType>"}},
+                "rq_type_end_tag":{"type": "text","len":9},
+
+                "ctx_key_start_tag":{"type": "text","len":8},
+                "ctx_key":{"type": "text","len":{"type":"delimiter", "delimiter":"</Ctxkey>"}},
+                "ctx_key_end_tag":{"type": "text","len":9},
+
+                "uniq_key_start_tag":{"type": "text","len":11},
+                "uniq_key":{"type": "text","len":{"type":"delimiter", "delimiter":"</UniqueKey>"}},
+                "uniq_key_end_tag":{"type": "text","len":12},
+
+                "transaction_id_start_tag":{"type": "text","len":15},
+                "transaction_id":{"type": "text","len":{"type":"delimiter", "delimiter":"</TransactionID>"}},
+                "transaction_id_end_tag":{"type": "text","len":16},
+
+                "version_start_tag":{"type": "text","len":9},
+                "version":{"type": "text","len":{"type":"delimiter", "delimiter":"</Version>"}},
+                "version_end_tag":{"type": "text","len":10},
+
+                "data_start_tag":{"type": "text","len":6},
+                "data":
+                    {
+                    "type": "sequence",
+                    "len":{"type":"delimiter", "delimiter":"</Data>"},
+                    "fields":
+                        {
+                        "headx_dat_tim": {"type": "text", "len":19},
+                        "headx_rec_typ": {"type": "text", "len":2},
+                        "headx_auth_ppd": {"type": "text", "len":4},
+                        "headx_term_ln": {"type": "text", "len":4},
+                        "headx_term_fiid": {"type": "text", "len":4},
+                        "headx_term_term_id": {"type": "text", "len":16},
+                        "headx_crd_ln": {"type": "text", "len":4},
+                        "headx_crd_fiid": {"type": "text", "len":4},
+                        "headx_crd_pan": {"type": "text", "len":19},
+                        "headx_crd_mrb_num": {"type": "text", "len":3},
+                        "headx_brch_id": {"type": "text", "len":4},
+                        "headx_regn_id": {"type": "text", "len":4},
+                        "headx_user_fld1x": {"type": "text", "len":2},
+                        "setl_ttl_admin_dat_yy":{"type": "text","len":2},
+                        "setl_ttl_admin_dat_mm":{"type": "text","len":2},
+                        "setl_ttl_admin_dat_dd":{"type": "text","len":2},
+                        "setl_ttl_admin_tim_hh":{"type": "text","len":2},
+                        "setl_ttl_admin_tim_mm":{"type": "text","len":2},
+                        "setl_ttl_admin_tim_ss":{"type": "text","len":2},
+                        "setl_ttl_admin_tim_tt":{"type": "text","len":2},
+                        "setl_ttl_admin_cde":{"type": "text","len":2},
+                        "setl_ttl_term_db":{"type": "text","len":12},
+                        "setl_ttl_term_cr":{"type": "text","len":12},
+                        "setl_ttl_on_us_db":{"type": "text","len":12},
+                        "setl_ttl_on_us_cr":{"type": "text","len":12},
+                        "setl_ttl_crncy_cde":{"type": "text","len":3},
+                        "setl_ttl_user_fld9":{"type": "text","len":1},
+                        "setl_ttl_tim_ofst":{"type": "text","len":5},
+                        "setl_ttl_ttl_area":{"type": "text","len":20},
+                        "tokens": {"type": "schema",  "schema": "TOKENS_RTF"}
+                        }
+                },
+                "data_end_tag":{"type": "text","len":7}
+                }
+            },
+        "rtf_data_rq_end_tag":{"type": "text","len":12}
+
+
+    }
+}
+
+
+
+

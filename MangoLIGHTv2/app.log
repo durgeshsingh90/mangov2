@@ -1,0 +1,11 @@
+root - DEBUG - Toto je debug správa
+root - INFO - Toto je informa\u010dná správa
+root - WARNING - Toto je varovná správa
+root - ERROR - Toto je chybová správa
+root - CRITICAL - Toto je kritická správa
+asyncio - DEBUG - Using proactor: IocpProactor
+root - DEBUG - Toto je debug správa
+root - INFO - Toto je informa\u010dná správa
+root - WARNING - Toto je varovná správa
+root - ERROR - Toto je chybová správa
+root - CRITICAL - Toto je kritická správa

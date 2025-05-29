@@ -1,0 +1,173 @@
+{
+"type": "sequence",
+"fields":
+  {
+  "tran_cat_cde": {"type": "text", "len": 1, "value":{"type": "ebcdic"}},
+  "subelements":
+      {
+      "type": "tag_len_val",
+      "len":{"type": "remainder"},
+      "tag_id": {"type": "text", "value":{"type": "ebcdic"}, "len": 2},
+      "tag_val":{"type": "text", "value":{"type": "ebcdic"}, "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}}},
+      "tags":
+          {
+          "66":
+              {
+              "type":"tag_len_val", "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+              "tag_id": {"type": "text", "value":{"type": "ebcdic"}, "len": 2},
+              "tag_val":{"type": "text", "value":{"type": "ebcdic"}, "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}}}
+              },
+          "34":
+              {
+              "type":"sequence", "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+              "fields":
+                  {
+                  "SF01":{"type": "text"   , "len": 5, "value":{"type": "ebcdic"}},
+                  "SF02":{"type": "text"   , "len": 5, "value":{"type": "ebcdic"}},
+                  "SF03":{"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                  }
+              },
+          "33":
+              {
+              "type":"tag_len_val", "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+              "tag_id": {"type": "text", "value":{"type": "ebcdic"}, "len": 2},
+              "tag_val":{"type": "text", "value":{"type": "ebcdic"}, "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}}}
+              },
+          "49":
+              {
+              "type":"sequence", "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+              "fields":
+                  {
+                  "SF01":{"type": "text"   , "len": 8, "value":{"type": "ebcdic"}},
+                  "SF02":{"type": "text"   , "len": 5, "value":{"type": "ebcdic"}},
+                  "SF03":{"type": "text"   , "len": 2, "value":{"type": "ebcdic"}}
+                  }
+              },
+          "56":
+              {
+              "type":"sequence", "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+              "fields":
+                  {
+                  "SF01":{"type": "text"   , "len": 3, "value":{"type": "ebcdic"}},
+                  "SF02":{"type": "text"   , "len": 3, "value":{"type": "ebcdic"}}
+                  }
+              },
+          "71":
+              {
+              "type": "sequence",
+              "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+              "fields":
+                  {
+                  "service_01":
+                      {
+                      "type": "sequence",
+                      "fields":
+                          {
+                          "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                          "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                          "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                          }
+                      },
+                  "service_02":
+                      {
+                      "type": "sequence",
+                      "fields":
+                          {
+                          "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                          "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                          "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                          }
+                      },
+                  "service_03":
+                      {
+                      "type": "sequence",
+                      "fields":
+                          {
+                          "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                          "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                          "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                          }
+                      },
+                  "service_04":
+                      {
+                      "type": "sequence",
+                      "fields":
+                          {
+                          "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                          "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                          "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                          }
+                      },
+                  "service_05":
+                      {
+                      "type": "sequence",
+                      "fields":
+                          {
+                          "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                          "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                          "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                          }
+                      },
+                  "service_06":
+                      {
+                      "type": "sequence",
+                      "fields":
+                          {
+                          "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                          "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                          "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                          }
+                      },
+                  "service_07":
+                      {
+                      "type": "sequence",
+                      "fields":
+                          {
+                          "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                          "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                          "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                          }
+                      },
+                  "service_08":
+                      {
+                      "type": "sequence",
+                      "fields":
+                          {
+                          "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                          "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                          "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                          }
+                      },
+                  "service_09":
+                      {
+                      "type": "sequence",
+                      "fields":
+                          {
+                          "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                          "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                          "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                          }
+                      },
+                  "service_10":
+                      {
+                      "type": "sequence",
+                      "fields":
+                          {
+                          "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                          "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                          "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                          }
+                      }
+                  }
+              },
+          "75":
+              {
+              "type":"tag_len_val", "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+              "tag_id": {"type": "text", "value":{"type": "ebcdic"}, "len": 2},
+              "tag_val":{"type": "text", "value":{"type": "ebcdic"}, "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}}}
+              }
+
+          }
+      }
+  }
+}

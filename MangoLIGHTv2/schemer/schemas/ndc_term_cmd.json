@@ -1,0 +1,41 @@
+{
+    "type":"delimiter_separated_fields",
+    "delimiter":28,
+    "fields":
+            {
+                "0":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                        "msq_class": {"type": "text"}
+                    }
+                },
+                "1":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                        "luno": {"type": "text"}
+
+                    }
+                },
+                "3":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                    "cmd_cde": {"type": "text"}
+                    }
+                },
+                "4":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                    "cmd_modifiers": {"type": "text"}
+                    }
+                }
+            }
+}
+

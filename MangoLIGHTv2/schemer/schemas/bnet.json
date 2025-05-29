@@ -1,0 +1,418 @@
+{
+    "type": "sequence",
+    "fields":
+    {
+        "mti"                    : {"type": "numeric", "len": 4, "value":{"type":"ebcdic"}},
+        "data_elements":
+        {
+        "type": "bitmap_blocks",
+        "subtype": "weaved",
+        "blocks": [
+            {
+                "next_block_ind_pos": "msbit",
+                "bitmap": { "len": 8, "value":{ "type":"binary"} },
+                "fields": {
+                        "DE002": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 2}}, "value":{"type": "ebcdic"}},
+                        "DE003": {"type": "text", "len": 6,  "value":{"type": "ebcdic"}},
+                        "DE004": {"type": "numeric", "len": 12, "value":{"type": "ebcdic"}},
+                        "DE005": {"type": "numeric", "len": 12, "value":{"type": "ebcdic"}},
+                        "DE006": {"type": "numeric", "len": 12, "value":{"type": "ebcdic"}},
+                        "DE007": {"type": "text", "len": 10, "value":{"type": "ebcdic"}},
+                        "DE008": {"type": "text", "len": 8,  "value":{"type": "ebcdic"}},
+                        "DE009": {"type": "text", "len": 8,  "value":{"type": "ebcdic"}},
+                        "DE010": {"type": "text", "len": 8,  "value":{"type": "ebcdic"}},
+                        "DE011": {"type": "text", "len": 6,  "value":{"type": "ebcdic"}},
+                        "DE012": {"type": "text", "len": 6,  "value":{"type": "ebcdic"}},
+                        "DE013": {"type": "text", "len": 4,  "value":{"type": "ebcdic"}},
+                        "DE014": {"type": "text", "len": 4,  "value":{"type": "ebcdic"}},
+                        "DE015": {"type": "text", "len": 4,  "value":{"type": "ebcdic"}},
+                        "DE016": {"type": "text", "len": 4,  "value":{"type": "ebcdic"}},
+                        "DE017": {"type": "text", "len": 4,  "value":{"type": "ebcdic"}},
+                        "DE018": {"type": "text", "len": 4,  "value":{"type": "ebcdic"}},
+                        "DE019": {"type": "text", "len": 3,  "value":{"type": "ebcdic"}},
+                        "DE020": {"type": "text", "len": 3,  "value":{"type": "ebcdic"}},
+                        "DE021": {"type": "text", "len": 3,  "value":{"type": "ebcdic"}},
+                        "DE022": {"type": "text", "len": 3,  "value":{"type": "ebcdic"}},
+                        "DE023": {"type": "text", "len": 3,  "value":{"type": "ebcdic"}},
+                        "DE024": {"type": "text", "len": 3,  "value":{"type": "ebcdic"}},
+                        "DE025": {"type": "text", "len": 2,  "value":{"type": "ebcdic"}},
+                        "DE026": {"type": "text", "len": 2,  "value":{"type": "ebcdic"}},
+                        "DE027": {"type": "text", "len": 1,  "value":{"type": "ebcdic"}},
+                        "DE028": {"type": "text", "len": 9,  "value":{"type": "ebcdic"}},
+                        "DE029": {"type": "text", "len": 9,  "value":{"type": "ebcdic"}},
+                        "DE030": {"type": "text", "len": 9,  "value":{"type": "ebcdic"}},
+                        "DE031": {"type": "text", "len": 9,  "value":{"type": "ebcdic"}},
+                        "DE032": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 2}}, "value":{"type": "ebcdic"}},
+                        "DE033": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 2}}, "value":{"type": "ebcdic"}},
+                        "DE034": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 2}}, "value":{"type": "ebcdic"}},
+                        "DE035": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 2}}, "value":{"type": "ebcdic"}},
+                        "DE036": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                        "DE037": {"type": "text", "len": 12, "value":{"type": "ebcdic"}},
+                        "DE038": {"type": "text", "len": 6,  "value":{"type": "ebcdic"}},
+                        "DE039": {"type": "text", "len": 2,  "value":{"type": "ebcdic"}},
+                        "DE040": {"type": "text", "len": 3,  "value":{"type": "ebcdic"}},
+                        "DE041": {"type": "text", "len": 8,  "value":{"type": "ebcdic"}},
+                        "DE042": {"type": "text", "len": 15, "value":{"type": "ebcdic"}},
+                        "DE043": {"type": "sequence",   "fields":{
+                                                                "SF01": {"type": "text"   , "len": 22, "value":{"type": "ebcdic"}},
+                                                                "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                                                                "SF03": {"type": "text"   , "len": 13, "value":{"type": "ebcdic"}},
+                                                                "SF04": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                                                                "SF05": {"type": "text"   , "len": 3, "value":{"type": "ebcdic"}}
+                                                                }
+                                },
+                        "DE044": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 2}}, "value":{"type": "ebcdic"}},
+                        "DE045": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 2}}, "value":{"type": "ebcdic"}},
+                        "DE046": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                        "DE047": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                        
+                        "DE048": {"type": "sequence",
+                                  "fields":
+                                    {
+                                    "tran_cat_cde": {"type": "text", "len": 1, "value":{"type": "ebcdic"}},
+                                    "subelements": 
+                                        {
+                                        "type": "tag_len_val",
+                                        "len":{"type": "remainder"},
+                                        "tag_id": {"type": "text", "value":{"type": "ebcdic"}, "len": 2},
+                                        "tag_val":{"type": "text", "value":{"type": "ebcdic"}, "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}}},
+                                        "tags":
+                                            {
+                                            "66":
+                                                {
+                                                "type":"tag_len_val", "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+                                                "tag_id": {"type": "text", "value":{"type": "ebcdic"}, "len": 2},
+                                                "tag_val":{"type": "text", "value":{"type": "ebcdic"}, "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}}}
+                                                },
+                                            "34":
+                                                {
+                                                "type":"sequence", "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+                                                "fields":
+                                                    {
+                                                    "SF01":{"type": "text"   , "len": 5, "value":{"type": "ebcdic"}},
+                                                    "SF02":{"type": "text"   , "len": 5, "value":{"type": "ebcdic"}},
+                                                    "SF03":{"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                                                    }
+                                                },
+                                            "33":
+                                                {
+                                                "type":"tag_len_val", "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+                                                "tag_id": {"type": "text", "value":{"type": "ebcdic"}, "len": 2},
+                                                "tag_val":{"type": "text", "value":{"type": "ebcdic"}, "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}}}
+                                                },
+                                            "49":
+                                                {
+                                                "type":"sequence", "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+                                                "fields":
+                                                    {
+                                                    "SF01":{"type": "text"   , "len": 8, "value":{"type": "ebcdic"}},
+                                                    "SF02":{"type": "text"   , "len": 5, "value":{"type": "ebcdic"}},
+                                                    "SF03":{"type": "text"   , "len": 2, "value":{"type": "ebcdic"}}
+                                                    }
+                                                },
+                                            "56":
+                                                {
+                                                "type":"sequence", "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+                                                "fields":
+                                                    {
+                                                    "SF01":{"type": "text"   , "len": 3, "value":{"type": "ebcdic"}},
+                                                    "SF02":{"type": "text"   , "len": 3, "value":{"type": "ebcdic"}}
+                                                    }
+                                                },
+                                            "71":
+                                                {
+                                                "type": "sequence",
+                                                "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+                                                "fields":
+                                                    {
+                                                    "service_01":
+                                                        {
+                                                        "type": "sequence", 
+                                                        "fields":
+                                                            {
+                                                            "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                            "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                                                            "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                                                            }
+                                                        },
+                                                    "service_02":
+                                                        {
+                                                        "type": "sequence", 
+                                                        "fields":
+                                                            {
+                                                            "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                            "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                                                            "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                                                            }
+                                                        },
+                                                    "service_03":
+                                                        {
+                                                        "type": "sequence", 
+                                                        "fields":
+                                                            {
+                                                            "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                            "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                                                            "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                                                            }
+                                                        },
+                                                    "service_04":
+                                                        {
+                                                        "type": "sequence", 
+                                                        "fields":
+                                                            {
+                                                            "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                            "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                                                            "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                                                            }
+                                                        },
+                                                    "service_05":
+                                                        {
+                                                        "type": "sequence", 
+                                                        "fields":
+                                                            {
+                                                            "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                            "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                                                            "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                                                            }
+                                                        },
+                                                    "service_06":
+                                                        {
+                                                        "type": "sequence", 
+                                                        "fields":
+                                                            {
+                                                            "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                            "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                                                            "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                                                            }
+                                                        },
+                                                    "service_07":
+                                                        {
+                                                        "type": "sequence", 
+                                                        "fields":
+                                                            {
+                                                            "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                            "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                                                            "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                                                            }
+                                                        },
+                                                    "service_08":
+                                                        {
+                                                        "type": "sequence", 
+                                                        "fields":
+                                                            {
+                                                            "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                            "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                                                            "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                                                            }
+                                                        },
+                                                    "service_09":
+                                                        {
+                                                        "type": "sequence", 
+                                                        "fields":
+                                                            {
+                                                            "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                            "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                                                            "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                                                            }
+                                                        },
+                                                    "service_10":
+                                                        {
+                                                        "type": "sequence",
+                                                        "fields":
+                                                            {
+                                                            "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                            "SF02": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}},
+                                                            "SF03": {"type": "text"   , "len": 1, "value":{"type": "ebcdic"}}
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                            "75":
+                                                {
+                                                "type":"tag_len_val", "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}},
+                                                "tag_id": {"type": "text", "value":{"type": "ebcdic"}, "len": 2},
+                                                "tag_val":{"type": "text", "value":{"type": "ebcdic"}, "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}}}
+                                                }
+
+                                            }
+                                        }
+                                    },
+                                  "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}
+                                  },
+                        
+                        
+                        "DE049": {"type": "numeric", "len": 3,  "value":{"type": "ebcdic"}},
+                        "DE050": {"type": "numeric", "len": 3,  "value":{"type": "ebcdic"}},
+                        "DE051": {"type": "numeric", "len": 3,  "value":{"type": "ebcdic"}},
+                        "DE052": {"type": "text", "len": 8,  "value":{"type":"binary"}},
+                        "DE053": {"type": "text", "len": 16, "value":{"type": "ebcdic"}},
+                        "DE054": {                "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "type": "sequence", 
+                                 "fields":{
+                                                                "adtl_amt_1": {"type": "sequence", 
+                                                                    "fields":
+                                                                        {
+                                                                        "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                                        "SF02": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                                        "SF03": {"type": "numeric"   , "len": 3, "value":{"type": "ebcdic"}},
+                                                                        "SF04": {"type": "text"   , "len": 13, "value":{"type": "ebcdic"}}
+                                                                        }},
+                                                                "adtl_amt_2": {"type": "sequence",
+                                                                    "fields":
+                                                                        {
+                                                                        "SF01": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                                        "SF02": {"type": "text"   , "len": 2, "value":{"type": "ebcdic"}},
+                                                                        "SF03": {"type": "numeric"   , "len": 3, "value":{"type": "ebcdic"}},
+                                                                        "SF04": {"type": "text"   , "len": 13, "value":{"type": "ebcdic"}}
+                                                                        }}
+                                                                }
+                                },
+                        "DE055": {
+                                 "type": "tag_len_val",
+                                 "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}},
+                                 "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+                                 "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}}
+                                 },
+                        "DE056": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                        "DE057": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                        "DE058": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                        "DE059": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                        "DE060": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                        "DE061": {                "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "type": "sequence", 
+                                 "fields":{
+                                                                "SE01": {"type": "text"   , "len": 1,  "value":{"type":"ebcdic"}},
+                                                                "SE02": {"type": "text"   , "len": 1,  "value":{"type":"ebcdic"}},
+                                                                "SE03": {"type": "text"   , "len": 1 , "value":{"type":"ebcdic"}},
+                                                                "SE04": {"type": "text"   , "len": 1,  "value":{"type":"ebcdic"}},
+                                                                "SE05": {"type": "text"   , "len": 1,  "value":{"type":"ebcdic"}},
+                                                                "SE06": {"type": "text"   , "len": 1 , "value":{"type":"ebcdic"}},
+                                                                "SE07": {"type": "text"   , "len": 1,  "value":{"type":"ebcdic"}},
+                                                                "SE08": {"type": "text"   , "len": 1,  "value":{"type":"ebcdic"}},
+                                                                "SE09": {"type": "text"   , "len": 1 , "value":{"type":"ebcdic"}},
+                                                                "SE10": {"type": "text"   , "len": 1,  "value":{"type":"ebcdic"}},
+                                                                "SE11": {"type": "text"   , "len": 1,  "value":{"type":"ebcdic"}},
+                                                                "SE12": {"type": "text"   , "len": 2,  "value":{"type":"ebcdic"}},
+                                                                "SE13": {"type": "text"   , "len": 3,  "value":{"type":"ebcdic"}},
+                                                                "SE14": {"type": "text"   , "len":{"type": "remainder"}, "value":{"type":"ebcdic"}}
+                                                                }
+                                },
+                        "DE062": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                        "DE063": {                "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "type": "sequence",
+                                 "fields":{
+                                                                "SF01": {"type": "text"   , "len": 3,  "value":{"type":"ebcdic"}},
+                                                                "SF02": {"type": "text"   ,  "len":{"type": "remainder"},  "value":{"type":"ebcdic"}}
+                                                                }
+                        },
+                        "DE064": {"type": "text", "len": 8,  "value":{"type":"binary"}}
+                }
+            },
+           
+            
+            {
+                "next_block_ind_pos": "msbit",
+                "bitmap": { "len": 8, "value":{ "type":"binary"} },
+                
+                "fields": {
+                    "DE066": {"type": "text", "len": 1,  "value":{"type": "ebcdic"}},
+                    "DE067": {"type": "text", "len": 2,  "value":{"type": "ebcdic"}},
+                    "DE068": {"type": "text", "len": 3,  "value":{"type": "ebcdic"}},
+                    "DE069": {"type": "text", "len": 3,  "value":{"type": "ebcdic"}},
+                    "DE070": {"type": "numeric", "len": 3,  "value":{"type": "ebcdic"}},
+                    "DE071": {"type": "text", "len": 4,  "value":{"type": "ebcdic"}},
+                    "DE072": {"type": "text", "len": 4,  "value":{"type": "ebcdic"}},
+                    "DE073": {"type": "text", "len": 6,  "value":{"type": "ebcdic"}},
+                    "DE074": {"type": "text", "len": 10, "value":{"type": "ebcdic"}},
+                    "DE075": {"type": "text", "len": 10, "value":{"type": "ebcdic"}},
+                    "DE076": {"type": "text", "len": 10, "value":{"type": "ebcdic"}},
+                    "DE077": {"type": "text", "len": 10, "value":{"type": "ebcdic"}},
+                    "DE078": {"type": "text", "len": 10, "value":{"type": "ebcdic"}},
+                    "DE079": {"type": "text", "len": 10, "value":{"type": "ebcdic"}},
+                    "DE080": {"type": "text", "len": 10, "value":{"type": "ebcdic"}},
+                    "DE081": {"type": "text", "len": 10, "value":{"type": "ebcdic"}},
+                    "DE082": {"type": "text", "len": 12, "value":{"type": "ebcdic"}},
+                    "DE083": {"type": "text", "len": 12, "value":{"type": "ebcdic"}},
+                    "DE084": {"type": "text", "len": 12, "value":{"type": "ebcdic"}},
+                    "DE085": {"type": "text", "len": 12, "value":{"type": "ebcdic"}},
+                    "DE086": {"type": "text", "len": 16, "value":{"type": "ebcdic"}},
+                    "DE087": {"type": "text", "len": 16, "value":{"type": "ebcdic"}},
+                    "DE088": {"type": "text", "len": 16, "value":{"type": "ebcdic"}},
+                    "DE089": {"type": "text", "len": 16, "value":{"type": "ebcdic"}},
+                    "DE090": {"type": "sequence",
+                              "fields":{
+                                       "SF01": {"type": "numeric", "len": 4,   "value":{"type":"ebcdic"}},
+                                       "SF02": {"type": "text"   , "len": 6,   "value":{"type":"ebcdic"}},
+                                       "SF03": {"type": "text"   , "len": 10,  "value":{"type":"ebcdic"}},
+                                       "SF04": {"type": "text"   , "len": 11,  "value":{"type":"ebcdic"}},
+                                       "SF05": {"type": "text"   , "len": 11,  "value":{"type":"ebcdic"}}
+                                       }
+                             },
+                    "DE091": {"type": "text", "len": 1,  "value":{"type": "ebcdic"}},
+                    "DE092": {"type": "text", "len": 2,  "value":{"type": "ebcdic"}},
+                    "DE093": {"type": "text", "len": 5,  "value":{"type": "ebcdic"}},
+                    "DE094": {"type": "text", "len": 7,  "value":{"type": "ebcdic"}},
+                    "DE095": {"type": "sequence",
+                              "fields":{
+                                       "SF01": {"type": "numeric", "len": 12,   "value":{"type":"ebcdic"}},
+                                       "SF02": {"type": "numeric", "len": 12,   "value":{"type":"ebcdic"}},
+                                       "SF03": {"type": "numeric", "len": 12,  "value":{"type":"ebcdic"}},
+                                       "SF04": {"type": "text"   , "len": 6,  "value":{"type":"ebcdic"}}
+                                       }
+                             },
+                    "DE096": {"type": "text", "len": 8,  "value":{"type": "ebcdic"}},
+                    "DE097": {"type": "text", "len": 17, "value":{"type": "ebcdic"}},
+                    "DE098": {"type": "text", "len": 25, "value":{"type": "ebcdic"}},
+                    "DE099": {"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 2}}, "value":{"type": "ebcdic"}},
+                    "DE100":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 2}}, "value":{"type": "ebcdic"}},
+                    "DE101":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 2}}, "value":{"type": "ebcdic"}},
+                    "DE102":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 2}}, "value":{"type": "ebcdic"}},
+                    "DE103":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 2}}, "value":{"type": "ebcdic"}},
+                    "DE104":{
+                             "type": "tag_len_val",
+                             "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}},
+                             "tag_id": {"type": "text", "value":{"type": "ebcdic"}, "len": 3},
+                             "tag_val":{"type": "text", "value":{"type": "ebcdic"}, "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 3}}}
+                             },
+                    "DE105":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE106":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE107":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE108":{
+                             "type": "tag_len_val",
+                             "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}},
+                             "tag_id": {"type": "text", "value":{"type": "ebcdic"}, "len": 2},
+                             "tag_val":{"type": "text", "value":{"type": "ebcdic"}, "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 3}}}
+                             },
+                    "DE109":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE110":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE111":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE112":{
+                             "type": "tag_len_val",
+                             "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}},
+                             "tag_id": {"type": "text", "value":{"type": "ebcdic"}, "len": 3},
+                             "tag_val":{"type": "text", "value":{"type": "ebcdic"}, "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 3}}}
+                             },
+                    "DE113":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE114":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE115":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE116":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE117":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE118":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE119":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE120":{
+                             "type": "tag_len_val",
+                             "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}},
+                             "tag_id": {"type": "text", "value":{"type": "ebcdic"}, "len": 2},
+                             "tag_val":{"type": "text", "value":{"type": "ebcdic"}, "len":{"type": "indicator", "value":{"type": "ebcdic", "len": 2}}}
+                            },
+                    "DE121":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE122":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE123":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE124":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE125":{"type": "text", "len": 8,  "value":{"type":"binary"}},
+                    "DE126":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE127":{"type": "text", "len": {"type": "indicator", "value":{"type": "ebcdic", "len": 3}}, "value":{"type": "ebcdic"}},
+                    "DE128":{"type": "text", "len": 8,  "value":{"type":"binary"}}
+                }
+            }
+        ]
+        }
+    }
+}

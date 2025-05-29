@@ -1,0 +1,11 @@
+{
+        "type": "sequence",
+        "fields":
+            {
+            "LEN":           {"type": "text",    "len": 3},
+            "USER-FLD1":     {"type": "text",    "len": 1},
+            "FIID":          {"type": "text",    "len": 4},
+            "DATA":          {"type": "text"    }
+
+            }
+}

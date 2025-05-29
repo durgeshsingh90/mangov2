@@ -1,0 +1,11 @@
+{
+    "ip": "a5cvap1003",
+    "port": "7534",
+    "tps": "10",
+    "wait_after": "5",
+    "requests": [],
+    "input_file": "",
+    "log_msg_size": 64,
+    "max_log_msgs_shown": 3,
+    "len_ind": "OMNIPAY"
+}

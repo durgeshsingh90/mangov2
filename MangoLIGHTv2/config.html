@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Light</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="static/bootstrap.min.css" rel="stylesheet"><link rel="stylesheet" href="static/styles.css">
+    <link rel="icon" type="image/x-icon" href="static/favicon.png">
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <a href="/" class="ddi btn"><== BACK</a>
+        <a href="/config" class="ddi btn" style="font-weight: bold; color: #ffc107">CONFIG</a>
+    </div>
+  </nav>
+
+  <div class="container main" style="padding: 20px;">
+    <form id="myForm">
+      <div class="mb-3 row" style="display: flex; align-items: center;">
+        <div class="col-md-2"><label for="ip" class="form-label">IP:</label></div>
+        <div class="col-md-10"><input type="text" class="form-control" id="ip" name="ip" placeholder="0.0.0.0"></div>
+      </div>
+      <div class="mb-3 row" style="display: flex; align-items: center;">
+        <div class="col-md-2"><label for="port" class="form-label">PORT:</label></div>
+        <div class="col-md-10"><input type="text" class="form-control" id="port" name="port" placeholder="8000"></div>
+      </div>
+      <div class="mb-3 row" style="display: flex; align-items: center;">
+        <div class="col-md-2"><label for="tps" class="form-label">TPS:</label></div>
+        <div class="col-md-10"><input type="text" class="form-control" id="tps" name="tps" value="10"></div>
+      </div>
+        <div class="mb-3 row" style="display: flex; align-items: center;">
+        <div class="col-md-2"><label for="wait" class="form-label">WAIT TIME AFTER:</label></div>
+        <div class="col-md-10"><input type="text" class="form-control" id="wait" name="wait" value="10"></div>
+      </div>
+        <div class="mb-3 row" style="display: flex; align-items: center;">
+        <div class="col-md-2"><label for="len" class="form-label">LEN IND:</label></div>
+        <div class="col-md-10"><input type="text" class="form-control" id="len" name="len" value="DEFAULT"></div>
+      </div>
+    </form>
+  </div>
+
+  <div class="container">
+      <button class="btn btn-warning" onclick="save_config()" style="font-weight: bold">SAVE</button>
+  </div>
+
+  <div class="container">
+      <p id="msg" style="color: green"></p>
+  </div>
+
+  <script src="static/bootstrap.bundle.min.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", set_config);
+
+function set_config() {
+
+    let url = 'http://'+window.location.hostname+':5001/get_config/';
+
+    fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: {}
+    })
+    .then(response => response.json())
+    .then(json => {
+        document.getElementById("ip").value = json.result["ip"];
+        document.getElementById("port").value = json.result["port"];
+        document.getElementById("tps").value = json.result["tps"];
+        document.getElementById("wait").value = json.result["wait_after"];
+        document.getElementById("len").value = json.result["len_ind"];
+    })
+    .catch(err => console.log('Error: ', err));
+}
+
+        function save_config(){
+            let url = 'http://'+window.location.hostname+':5001/save_config/';
+
+            let data = {
+                ip: document.getElementById("ip").value,
+                port: document.getElementById("port").value,
+                tps: document.getElementById("tps").value,
+                wait: document.getElementById("wait").value,
+                len: document.getElementById("len").value
+            }
+
+            fetch(url, {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(json => {
+                document.getElementById("msg").innerHTML = json.result;
+            })
+            .catch(err => console.log('Error: ', err));
+        }
+
+    </script>
+  </body>
+</html>

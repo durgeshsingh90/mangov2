@@ -1,0 +1,162 @@
+{
+    "type":"delimiter_separated_fields",
+    "delimiter":28,
+
+    "fields":
+            {
+                "0":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                        "msq_class": {"type": "text", "len": 1},
+                        "msq_sub_class": {"type": "text"}
+                    }
+                },
+                "1":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                        "luno": {"type": "text"}
+
+                    }
+                },
+                "4":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                    "top_of_rcpt_flg": {"type": "text", "len": 1},
+                    "msq_cord_num": {"type": "text"}
+                    }
+                },
+                "5":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                    "track2": {"type": "text"}
+                    }
+                },
+                "7":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                    "op_cde": {"type": "text"}
+                    }
+                },
+                "8":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                    "amount": {"type": "text"}
+                    }
+                },
+                "9":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                    "buff_a": {"type": "text"}
+                    }
+                },
+                "10":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                    "buff_b": {"type": "text"}
+                    }
+                },
+                "11":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                    "buff_c": {"type": "text"}
+                    }
+                },
+                "12":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                    "track1": {"type": "text"}
+                    }
+                },
+                "13":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                        "last_txn_stat":
+                        {
+                          "type": "delimiter_separated_fields",
+                          "delimiter": "\u001D",
+                          "fields":
+                           {
+                              "0":
+                              {
+                                  "type"  : "sequence",
+                                  "fields":
+                                  {
+                                  "id": {"type": "text", "len": 1},
+                                  "seq_num": {"type": "text", "len": 4},
+                                  "status": {"type": "text", "len": 1},
+                                  "notes_dispensed": {"type": "text", "len": 20}
+                                  }
+                              },
+                              "1":
+                              {
+                                  "type"  : "sequence",
+                                  "fields":
+                                  {
+                                  "crypto_info_data": {"type": "text", "len": 2},
+                                  "tvr": {"type": "text", "len": 10},
+                                  "txn_stat_info": {"type": "text", "len": 4},
+                                  "selected_app_id": {"type": "text"}
+                                  }
+                              },
+                              "2":
+                              {
+                                  "type"  : "sequence",
+                                  "fields":
+                                  {
+                                  "script_proc_res": {"type": "text", "len": 1},
+                                  "script_cmd_num_fail": {"type": "text", "len": 1},
+                                  "script_id": {"type": "text", "len": 8}
+                                  }
+                              }
+                           }
+                        }
+                    }
+                },
+                "14":
+                {
+                    "type": "schema",
+                    "schema": "WINCOR_OPT_FLDS",
+                    "msg_type": "rq"
+                },
+                "15":
+                {
+                    "type": "schema",
+                    "schema": "WINCOR_OPT_FLDS",
+                    "msg_type": "rq"
+                },
+                "16":
+                {
+                    "type": "schema",
+                    "schema": "WINCOR_OPT_FLDS",
+                    "msg_type": "rq"
+                },
+                "17":
+                {
+                    "type": "schema",
+                    "schema": "WINCOR_OPT_FLDS",
+                    "msg_type": "rq"
+                }
+            }
+}

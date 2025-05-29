@@ -1,0 +1,228 @@
+{
+    "type": "sequence",
+    "fields":
+    {
+        "xml_header":{"type": "text","len":{"type":"delimiter", "delimiter":"<RTFDataRq>"}},
+        "rtf_data_rq_start_tag":{"type": "text","len":11},
+        "rtf_data_rq":
+            {
+            "type": "sequence",
+            "len":{"type":"delimiter", "delimiter":"</RTFDataRq>"},
+            "fields":
+                {
+                "rq_type_start_tag":{"type": "text","len":8},
+                "rq_type":{"type": "text","len":{"type":"delimiter", "delimiter":"</RqType>"}},
+                "rq_type_end_tag":{"type": "text","len":9},
+                
+                "ctx_key_start_tag":{"type": "text","len":8},
+                "ctx_key":{"type": "text","len":{"type":"delimiter", "delimiter":"</Ctxkey>"}},
+                "ctx_key_end_tag":{"type": "text","len":9},
+                
+                "uniq_key_start_tag":{"type": "text","len":11},
+                "uniq_key":{"type": "text","len":{"type":"delimiter", "delimiter":"</UniqueKey>"}},
+                "uniq_key_end_tag":{"type": "text","len":12},
+                
+                "transaction_id_start_tag":{"type": "text","len":15},
+                "transaction_id":{"type": "text","len":{"type":"delimiter", "delimiter":"</TransactionID>"}},
+                "transaction_id_end_tag":{"type": "text","len":16},
+                
+                "version_start_tag":{"type": "text","len":9},
+                "version":{"type": "text","len":{"type":"delimiter", "delimiter":"</Version>"}},
+                "version_end_tag":{"type": "text","len":10},
+                
+                "data_start_tag":{"type": "text","len":6},
+                "data":
+                    {
+                    "type": "sequence",
+                    "len":{"type":"delimiter", "delimiter":"</Data>"},
+                    "fields":
+                        {
+                        "headx_dat_tim":{"type": "text","len":19},
+                        "headx_rec_typ":{"type": "text","len":2},
+                        "headx_crd_ln":{"type": "text","len":4},
+                        "headx_crd_fiid":{"type": "text","len":4},
+                        "headx_crd_card_crd_num":{"type": "text","len":19},
+                        "headx_crd_card_mbr_num":{"type": "text","len":3},
+                        "headx_retl_ky_ln":{"type": "text","len":4},
+                        
+                        "headx_retl_ky_rdfkey_fiid":{"type": "text","len":4},
+                        "headx_retl_ky_rdfkey_grp":{"type": "text","len":4},
+                        "headx_retl_ky_rdfkey_regn":{"type": "text","len":4},
+                        "headx_retl_ky_rdfkey_id":{"type": "text","len":19},
+                        
+                        "headx_retl_term_id":{"type": "text","len":16},
+                        "headx_retl_shift_num":{"type": "text","len":3},
+                        "headx_retl_batch_num":{"type": "text","len":3},
+                        "headx_term_ln":{"type": "text","len":4},
+                        "headx_term_fiid":{"type": "text","len":4},
+                        "headx_term_term_id":{"type": "text","len":16},
+                        
+                        "headx_term_tim_hh":{"type": "text","len":2},
+                        "headx_term_tim_mm":{"type": "text","len":2},
+                        "headx_term_tim_ss":{"type": "text","len":2},
+                        "headx_term_tim_tt":{"type": "text","len":2},
+                        
+                        "headx_tkey_term_id":{"type": "text","len":16},
+                        "headx_tkey_rkey_rec_frmt":{"type": "text","len":1},
+                        "headx_tkey_rkey_retailer_id":{"type": "text","len":19},
+                        "headx_tkey_rkey_clerk_id":{"type": "text","len":6},
+                        
+                        "headx_data_flag":{"type": "text","len":1},
+                        "authx_typ":{"type": "text","len":4},
+                        "authx_rte_stat":{"type": "text","len":2},
+                        "authx_originator":{"type": "text","len":1},
+                        "authx_responder":{"type": "text","len":1},
+                        "authx_iss_cde":{"type": "text","len":2},
+                        "authx_entry_tim":{"type": "text","len":19},
+                        "authx_exit_tim":{"type": "text","len":19},
+                        "authx_re_entry_tim":{"type": "text","len":19},
+                        
+                        "authx_tran_dat_yy":{"type": "text","len":2},
+                        "authx_tran_dat_mm":{"type": "text","len":2},
+                        "authx_tran_dat_dd":{"type": "text","len":2},
+                        "authx_tran_tim_hh":{"type": "text","len":2},
+                        "authx_tran_tim_mm":{"type": "text","len":2},
+                        "authx_tran_tim_ss":{"type": "text","len":2},
+                        "authx_tran_tim_tt":{"type": "text","len":2},
+                        
+                        "authx_post_dat_yy":{"type": "text","len":2},
+                        "authx_post_dat_mm":{"type": "text","len":2},
+                        "authx_post_dat_dd":{"type": "text","len":2},
+                        
+                        "authx_acq_ichg_setl_dat_yy":{"type": "text","len":2},
+                        "authx_acq_ichg_setl_dat_mm":{"type": "text","len":2},
+                        "authx_acq_ichg_setl_dat_dd":{"type": "text","len":2},
+                        "authx_iss_ichg_setl_dat_yy":{"type": "text","len":2},
+                        "authx_iss_ichg_setl_dat_mm":{"type": "text","len":2},
+                        "authx_iss_ichg_setl_dat_dd":{"type": "text","len":2},
+                        
+                        "authx_seq_num":{"type": "text","len":12},
+                        "authx_term_name_loc":{"type": "text","len":25},
+                        "authx_term_owner_name":{"type": "text","len":22},
+                        "authx_term_city":{"type": "text","len":13},
+                        "authx_term_st":{"type": "text","len":3},
+                        "authx_term_cntry_cde":{"type": "text","len":2},
+                        
+                        "authx_brch_id":{"type": "text","len":4},
+                        "authx_user_fld2":{"type": "text","len":3},
+                        "authx_term_tim_ofst":{"type": "text","len":5},
+                        "authx_acq_inst_id_num":{"type": "text","len":11},
+                        "authx_rcv_inst_id_num":{"type": "text","len":11},
+                        "authx_term_typ":{"type": "text","len":2},
+                        "authx_clerk_id":{"type": "text","len":6},
+                        "authx_crt_auth_grp":{"type": "text","len":4},
+                        "authx_crt_auth_user_id":{"type": "text","len":8},
+                        "authx_retl_sic_cde":{"type": "text","len":4},
+                        "authx_orig":{"type": "text","len":4},
+                        "authx_dest":{"type": "text","len":4},
+                        
+                        "authx_tran_cde_tc":{"type": "text","len":2},
+                        "authx_tran_cde_t":{"type": "text","len":1},
+                        "authx_tran_cde_aa":{"type": "text","len":2},
+                        "authx_tran_cde_c":{"type": "text","len":1},
+                        
+                        "authx_crd_typ":{"type": "text","len":2},
+                        "authx_acct":{"type": "text","len":19},
+                        "authx_resp_cde":{"type": "text","len":3},
+                
+                        "authx_amt_1":{"type": "text","len":19},
+                        "authx_amt_2":{"type": "text","len":19},
+                        
+                        "authx_exp_dat":{"type": "text","len":4},
+                        "authx_track2":{"type": "text","len":40},
+                        "authx_pin_ofst":{"type": "text","len":16},
+                        "authx_pre_auth_seq_num":{"type": "text","len":12},
+                        "authx_invoice_num":{"type": "text","len":10},
+                        "authx_orig_invoice_num":{"type": "text","len":10},
+                        "authx_authorizer":{"type": "text","len":16},
+                        "authx_auth_ind":{"type": "text","len":1},
+                        "authx_shift_num":{"type": "text","len":3},
+                        "authx_batch_seq_num":{"type": "text","len":3},
+                        "authx_apprv_cde":{"type": "text","len":8},
+                        "authx_apprv_cde_lgth":{"type": "text","len":1},
+                        "authx_ichg_resp":{"type": "text","len":8},
+                        "authx_pseudo_term_id":{"type": "text","len":4},
+                        "authx_rfrl_phone":{"type": "text","len":20},
+                        "authx_dft_capture_flg":{"type": "text","len":1},
+                        "authx_setl_flag":{"type": "text","len":1},
+                        "authx_rvrl_cde":{"type": "text","len":2},
+                        "authx_rea_for_chrgbck":{"type": "text","len":2},
+                        "authx_num_of_chrgbck":{"type": "text","len":1},
+                        "authx_pt_srv_cond_cde":{"type": "text","len":2},
+                        "authx_pt_srv_entry_mde":{"type": "text","len":3},
+                        "authx_auth_ind2":{"type": "text","len":1},
+                        "authx_orig_crncy_cde":{"type": "text","len":3},
+                        
+                        "authx_mult_crncy_auth_crncy_cde":{"type": "text","len":3},
+                        "authx_mult_crncy_auth_conv_rate":{"type": "text","len":8},
+                        "authx_mult_crncy_setl_crncy_cde":{"type": "text","len":3},
+                        "authx_mult_crncy_setl_conv_rate":{"type": "text","len":8},
+                        "authx_mult_crncy_conv_dat_tim":{"type": "text","len":19},
+                        
+                        "authx_refr_imp_ind":{"type": "text","len":1},
+                        "authx_refr_avail_cr":{"type": "text","len":1},
+                        "authx_refr_cr_lmt":{"type": "text","len":1},
+                        "authx_refr_cr_bal":{"type": "text","len":1},
+                        "authx_refr_ttl_float":{"type": "text","len":1},
+                        "authx_refr_cur_float":{"type": "text","len":1},
+                        
+                        "authx_adj_setl_impact_flg":{"type": "text","len":1},
+                        
+                        "authx_refr_ind_pbf1":{"type": "text","len":1},
+                        "authx_refr_ind_pbf2":{"type": "text","len":1},
+                        "authx_refr_ind_pbf3":{"type": "text","len":1},
+                        "authx_refr_ind_pbf4":{"type": "text","len":1},
+                        
+                        "authx_frwd_inst_id_num":{"type": "text","len":11},
+                        "authx_crd_accpt_id_num":{"type": "text","len":11},
+                        "authx_crd_iss_id_num":{"type": "text","len":11},
+                        
+                        "authx_orig_msg_typ":{"type": "text","len":4},
+                        "authx_orig_tran_tim_hh":{"type": "text","len":2},
+                        "authx_orig_tran_tim_mm":{"type": "text","len":2},
+                        "authx_orig_tran_tim_ss":{"type": "text","len":2},
+                        "authx_orig_tran_tim_tt":{"type": "text","len":2},
+                        "authx_orig_tran_dat":{"type": "text","len":4},
+                        "authx_orig_seq_num":{"type": "text","len":12},
+                        "authx_orig_b24_post_dat":{"type": "text","len":4},
+                        
+                        "authx_excp_rsn_cde":{"type": "text","len":3},
+                        "authx_ovrrde_flg":{"type": "text","len":1},
+                        "authx_addr":{"type": "text","len":20},
+                        "authx_zip_cde":{"type": "text","len":9},
+                        "authx_addr_vrfy_stat":{"type": "text","len":1},
+                        "authx_pin_ind":{"type": "text","len":1},
+                        "authx_pin_tries":{"type": "text","len":1},
+                        
+                        "authx_pre_auth_ts_dat_yy":{"type": "text","len":2},
+                        "authx_pre_auth_ts_dat_mm":{"type": "text","len":2},
+                        "authx_pre_auth_ts_dat_dd":{"type": "text","len":2},
+                        "authx_pre_auth_ts_tim_hh":{"type": "text","len":2},
+                        "authx_pre_auth_ts_tim_mm":{"type": "text","len":2},
+                        "authx_pre_auth_ts_tim_ss":{"type": "text","len":2},
+                        "authx_pre_auth_ts_tim_tt":{"type": "text","len":2},
+                        
+                        "authx_pre_auth_hlds_lvl":{"type": "text","len":1},
+                        "authx_user_fld5":{"type": "text","len":33},
+                
+                        "tokens": {"type": "schema",  "schema": "TOKENS_RTF"}
+
+                    }
+                },
+                "data_end_tag":{"type": "text","len":7}
+
+
+
+
+
+                }
+            },
+        "rtf_data_rq_end_tag":{"type": "text","len":12}
+
+
+    }
+}
+
+
+
+

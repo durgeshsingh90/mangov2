@@ -1,0 +1,833 @@
+{
+"type": "tokens",
+"escape_xml":true,
+"tkns":
+    {
+    "! 01":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "ADDR":             {"type": "text",    "len": 20},
+            "ZIP-CDE":          {"type": "text",    "len": 9},
+            "ADDR-VRFY-TYP":    {"type": "text",    "len": 1},
+            "FILLER":           {"type": "text"}
+            }
+        },
+    "! 03":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "ERR-FLG":             {"type": "text",    "len": 1},
+            "LOCL-PIN-VRFY-FLG":   {"type": "text",    "len": 1},
+            "CRD-VRFY-FLG":        {"type": "text",    "len": 1},
+            "COMPLETE-TRACK2-DATA":{"type": "text",    "len": 1},
+            "UAF-FLG":             {"type": "text",    "len": 1},
+            "RCPT-RQSTD":          {"type": "text",    "len": 1},
+            "FILLER":              {"type": "text"}
+            }
+        },
+    "! 04":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "ERR-FLG":              {"type": "text",    "len": 1},
+            "RTE-GRP":              {"type": "text",    "len": 11},
+            "CRD-VRFY-FLG":         {"type": "text",    "len": 1},
+            "CITY-EXT":             {"type": "text",    "len": 5},
+            "COMPLETE-TRACK2-DATA": {"type": "text",    "len": 1},
+            "UAF-FLG":              {"type": "text",    "len": 1},
+            "FILLER":               {"type": "text"}
+            }
+        },
+    "! 06":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "NEW-PIN-FRMT":         {"type": "text",    "len": 1},
+            "NEW-PIN-OFST":         {"type": "text",    "len": 16},
+            "PIN-CNT":              {"type": "text",    "len": 1},
+            "NEW-PIN-SIZE":         {"type": "text",    "len": 2},
+            "NEW-PIN-1":            {"type": "text",    "len": 16},
+            "NEW-PIN-2":            {"type": "text",    "len": 16},
+            "FILLER":               {"type": "text"}
+            }
+        },
+    "! 08":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "ACCT-TYPE":         {"type": "text",    "len": 2},
+            "ID-CODE-TYPE":      {"type": "text",    "len": 1},
+            "AUT-CODE":          {"type": "text",    "len": 25},
+            "ORG-TXN-REF":       {"type": "text",    "len": 17},
+            "TXN-REF":           {"type": "text",    "len": 17},
+            "RC-ERROR":          {"type": "text",    "len": 15},
+            "ON-US-FLG":         {"type": "text",    "len": 1},
+            "NUM-SES-CLS":       {"type": "text",    "len": 10},
+            "SERVICE-MODE":      {"type": "text",    "len": 1},
+            "ENTRY-MODE":        {"type": "text",    "len": 2},
+            "FILLER":            {"type": "text"}
+            }
+        },
+    "! 17":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "SRV-IND":              {"type": "text",    "len": 1},
+            "TRAN-ID":              {"type": "text",    "len": 15},
+            "VALID-CDE":            {"type": "text",    "len": 4},
+            "MKT-SPFC-DATA-ID":     {"type": "text",    "len": 1},
+            "DUR":                  {"type": "text",    "len": 2},
+            "PRSTGS-PROP-IND":      {"type": "text",    "len": 1},
+            "FILLER":               {"type": "text"}
+            }
+        },
+    "! 20":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "LIFE-CYCLE-IND":       {"type": "text",    "len": 1},
+            "TRACE-ID":             {"type": "text",    "len": 15},
+            "VALID-CDE":            {"type": "text",    "len": 4},
+            "MONITORING-STAT":      {"type": "text",    "len": 1},
+            "ERR-IND":              {"type": "text",    "len": 1},
+            "FILLER":               {"type": "text"}
+            }
+        },
+    "! 25":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "TRAN-FEE":         {"type": "text",    "len": 19},
+            "ORIG-FEE":         {"type": "text",    "len": 19},
+            "TERM-SUR-PROFILE": {"type": "text",    "len": 4},
+            "RVSL-CDE":         {"type": "text",    "len": 1},
+            "FLAT-FEE":         {"type": "text",    "len": 19},
+            "PCNT-FEE":         {"type": "text",    "len": 5},
+            "MIN-MAX":          {"type": "text",    "len": 1},
+            "AUTH-IND":         {"type": "text",    "len": 1},
+            "USER-FLD1":        {"type": "text",    "len": 1},
+            "FILLER":           {"type": "text"}
+            }
+        },
+    "! B1":
+        {
+        "type": "schema",
+        "schema": "TKN_B1",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            }
+        },
+    "! B2":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "BIT-MAP":              {"type": "text",    "len": 4},
+            "USER-FLD1":            {"type": "text",    "len": 4},
+            "CRYPTO-INFO-DATA":     {"type": "text",    "len": 2},
+            "TVR":                  {"type": "text",    "len": 10},
+            "ARQC":                 {"type": "text",    "len": 16},
+            "AMT-AUTH":             {"type": "text",    "len": 12},
+            "AMT-OTHER":            {"type": "text",    "len": 12},
+            "AIP":                  {"type": "text",    "len": 4},
+            "ATC":                  {"type": "text",    "len": 4},
+            "TERM-CNTRY-CDE":       {"type": "text",    "len": 3},
+            "TRAN-CRNCY-CDE":       {"type": "text",    "len": 3},
+            "TRAN-DAT":             {"type": "text",    "len": 6},
+            "TRAN-TYPE":            {"type": "text",    "len": 2},
+            "UNPREDICT-NUM":        {"type": "text",    "len": 8},
+            "ISS-APPL-DATA-LGTH":   {"type": "text",    "len": 4},
+            "ISS-APPL-DATA":        {"type": "text",    "len": 64},
+            "FILLER":               {"type": "text"}
+            }
+        },
+    "! B3":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "BIT-MAP":      {"type": "text",    "len": 4},
+            "TERM-SERL-NUM":{"type": "text",    "len": 8},
+            "EMV-TERM-CAP": {"type": "text",    "len": 8},
+            "USER-FLD1":    {"type": "text",    "len": 4},
+            "USER-FLD2":    {"type": "text",    "len": 8},
+            "EMV-TERM-TYPE":{"type": "text",    "len": 2},
+            "APPL-VER-NUM": {"type": "text",    "len": 4},
+            "CVM-RSLTS":    {"type": "text",    "len": 6},
+            "DF-NAME-LGTH": {"type": "text",    "len": 4},
+            "DF-NAME":      {"type": "text",    "len": 32},
+            "FILLER":       {"type": "text"}
+            }
+        },
+    "! B4":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "PT-SRV-ENTRY-MDE": {"type": "text",    "len": 3},
+            "TERM-ENTRY-CAP":   {"type": "text",    "len": 1},
+            "LAST-EMV-STAT":    {"type": "text",    "len": 1},
+            "DATA-SUSPECT":     {"type": "text",    "len": 1},
+            "APPL-PAN-SEQ-NUM": {"type": "text",    "len": 2},
+            "DEV-INFO":         {"type": "text",    "len": 6},
+            "RSN-ONL-CDE":      {"type": "text",    "len": 4},
+            "ARQC-VRFY":        {"type": "text",    "len": 1},
+            "ISO-RC-IND":       {"type": "text",    "len": 1},
+            "FILLER":           {"type": "text"}
+            }
+        },
+    "! B5":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "ISS-AUTH-DATA-LGTH":     {"type": "text",    "len": 4},
+            "EMV-ISS-AUTH-DATA":      {"type": "text",    "len": 32},
+            "SEND-CRD-BLK":           {"type": "text",    "len": 1},
+            "SEND-PUT-DATA":          {"type": "text",    "len": 1},
+            "FILLER":                 {"type": "text"}
+            }
+        },
+    "! BY":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "STAN":                   {"type": "text",    "len": 6},
+            "RETRVL-REF-NUM":         {"type": "text",    "len": 12},
+            "NETWK-ID":               {"type": "text",    "len": 4},
+            "RESP-CDE":               {"type": "text",    "len": 3},
+            "ISA-IND":                {"type": "text",    "len": 1},
+            "ISA-AMT":                {"type": "text",    "len": 8},
+            "FEE-PGM-IND":            {"type": "text",    "len": 3},
+            "ON-OFF-PREM-IND":        {"type": "text",    "len": 1},
+            "CROSS-BORDER-TXN-IND":   {"type": "text",    "len": 1},
+            "CROSS-BORDER-CRNCY-IND": {"type": "text",    "len": 1},
+            "CRNCY-CONV-ASSESS-AMT":  {"type": "text",    "len": 12},
+            "CRD-LVL-PROD-ID-VAL":    {"type": "text",    "len": 2},
+			"USER-FLD-ACI":           {"type": "text",    "len": 6},
+            "FILLER":                  {"type": "text"}
+            }
+        },
+    "! C0":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "CVD-FLD":           {"type": "text",    "len": 4},
+            "RESUB-STAT":        {"type": "text",    "len": 1},
+            "RESUB-CNTR":        {"type": "text",    "len": 3},
+            "TERM-POSTAL-CDE":   {"type": "text",    "len": 10},
+            "E-COM-FLG":         {"type": "text",    "len": 1},
+            "CMRCL-CRD-TYP":     {"type": "text",    "len": 1},
+            "ADNL-DATA-IND":     {"type": "text",    "len": 1},
+            "CVD-FLD-PRESENT":   {"type": "text",    "len": 1},
+            "SAF-OR-FORCE-POST": {"type": "text",    "len": 1},
+            "AUTHN-COLL-IND":    {"type": "text",    "len": 1},
+            "FRD-PRN-FLG":       {"type": "text",    "len": 1},
+            "CAVV-AAV-RSLT-CDE": {"type": "text",    "len": 1},
+            "FILLER":            {"type": "text"}
+            }
+        },
+    "! C4":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "TERM-ATTEND-IND":        {"type": "text",    "len": 1},
+            "TERM-OPER-IND":          {"type": "text",    "len": 1},
+            "TERM-LOC-IND":           {"type": "text",    "len": 1},
+            "CRDHLDR-PRESENT-IND":    {"type": "text",    "len": 1},
+            "CRD-PRESENT-IND":        {"type": "text",    "len": 1},
+            "CRD-CAPTR-IND":          {"type": "text",    "len": 1},
+            "TXN-STAT-IND":           {"type": "text",    "len": 1},
+            "TXN-SEC-IND":            {"type": "text",    "len": 1},
+            "TXN-RTN-IND":            {"type": "text",    "len": 1},
+            "CRDHLDR-ACTVT-TERM-IND": {"type": "text",    "len": 1},
+            "TERM-INPUT-CAP-IND":     {"type": "text",    "len": 1},
+            "CRDHLDR-ID-METHOD":      {"type": "text",    "len": 1},
+            "FILLER":                 {"type": "text"}
+            }
+        },
+    "! C6":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "XID":         {"type": "text",    "len": 40},
+            "TRANS-STAIN": {"type": "text",    "len": 40},
+            "FILLER":      {"type": "text"}
+            }
+        },
+   "! CE":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "AUTHN-IND-FLG":     {"type": "text",    "len": 2},
+            "AUTHN-IND-DATA":    {"type": "text",    "len": 200},
+            "FILLER":            {"type": "text"}
+            }
+        },
+   "! CH":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "RESP-SRC-RSN-CDE":     {"type": "text",    "len": 1},
+            "CRD-VRFY-FLG2":        {"type": "text",    "len": 1},
+            "ONLINE-LMT":           {"type": "text",    "len": 12},
+            "RETL-CLASS-CDE":       {"type": "text",    "len": 4},
+            "EMV-CAPABLE-OUTLET":   {"type": "text",    "len": 1},
+            "RECUR-PMNT-IND":       {"type": "text",    "len": 1},
+            "NUM-INSTL":            {"type": "text",    "len": 2},
+            "NUM-MM-GRATUITY":      {"type": "text",    "len": 2},
+            "PMNT-PLAN":            {"type": "text",    "len": 3},
+            "TERM-OUTPUT-CAP-IND":  {"type": "text",    "len": 1},
+            "CRDHLDR-AUTHN-CAP-IND":{"type": "text",    "len": 1},
+            "PARTIAL-AUTH-OPT":     {"type": "text",    "len": 1},
+            "INSTL-PLAN-TYP":       {"type": "text",    "len": 2},
+            "INSTL-GRATUITY-PRD":   {"type": "text",    "len": 1},
+            "RVSL-RSN-IND":         {"type": "text",    "len": 1},
+            "CVM-IND":              {"type": "text",    "len": 1},
+            "REAL-TIME-DATA-IND":   {"type": "text",    "len": 1},
+            "AUTH-MSG-IND":         {"type": "text",    "len": 1},
+            "TERM-TYP":             {"type": "text",    "len": 1},
+            "PMNT-INFO":            {"type": "text",    "len": 1},
+            "USER-FLD1":            {"type": "text",    "len": 1},
+            "FILLER":               {"type": "text"}
+            }
+        },
+   "! CZ":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "ATC":                   {"type": "text",    "len": 4},
+            "FORM-FACTR-IND":        {"type": "text",    "len": 8},
+            "ATC-VALID-IND":         {"type": "text",    "len": 1},
+            "ATC-VRFY-RSLT":         {"type": "text",    "len": 1},
+            "PMNT-INITIATION-CHAN":  {"type": "text",    "len": 2},
+            "CRDHLDR-VRFY-ID-BY-DEV":{"type": "text",    "len": 2},
+            "ADNL-DATA-CDE":         {"type": "text",    "len": 2},
+            "USER-FLD-ACI":          {"type": "text",    "len": 20},
+            "FILLER":                {"type": "text"}
+            }
+        },
+   "! F3":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "TXN-TYP-IND":        {"type": "text",    "len": 2},
+            "TRNSPRT-MDE-IND":    {"type": "text",    "len": 2},
+            "USER-FLD-ACI":       {"type": "text",    "len": 4},
+            "FILLER":             {"type": "text"}
+            }
+        },
+   "! F4":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "WALLET-IND-FLG":        {"type": "text",    "len": 2},
+            "ID":                    {"type": "text",    "len": 3},
+            "TXN-TYP":               {"type": "text",    "len": 1},
+            "USER-FLD-ACI":          {"type": "text",    "len": 8},
+            "FILLER":                {"type": "text"}
+            }
+        },
+   "! FA":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "PMNT-FACILITATOR-ID":     {"type": "text", "len": 11},
+            "IDPNT-SALES-ORG-ID":      {"type": "text", "len": 11},
+            "SUB-MRCH-ID":             {"type": "text", "len": 15},
+            "USER-FLD-ACI":            {"type": "text", "len": 13},
+            "FILLER":                  {"type": "text"}
+            }
+        },
+   "! FB":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "DATA-IND-FLG":        {"type": "text",    "len": 2},
+            "INFO-DATA-LGTH":      {"type": "text",    "len": 4},
+            "INFO":                {"type": "text"}
+            }
+        },
+   "! FH":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "SCA-EXEMPT-INDS":          {"type": "text",    "len": 4},
+            "PGM-PROTO":                {"type": "text",    "len": 1},
+            "ECOMM-3D-SECURE-IND":      {"type": "text",    "len": 1},
+            "SCA-SCOPE-IND":            {"type": "text",    "len": 1},
+            "SCA-IND":                  {"type": "text",    "len": 1},
+            "TRA-EXEMPT-RSLT":          {"type": "text",    "len": 1},
+            "TRUSTED-MRCH-EXEMPT-RSLT": {"type": "text",    "len": 1},
+            "USER-FLD-ACI":             {"type": "text",    "len": 10},
+            "FILLER":                  {"type": "text"}
+            }
+        },
+   "! IP":
+        {
+        "type": "tag_len_val",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            }
+        },
+   "! P1":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "TXN-SUBTYPE":          {"type": "text",  "len": 2},
+            "PMT-ID":               {"type": "text",  "len": 6},
+            "CUST-ID":              {"type": "text",  "len": 30},
+            "DUE-AMT":              {"type": "text",  "len": 12},
+            "DUE-DATE":             {"type": "text",  "len": 10},
+            "MIN-AMT":              {"type": "text",  "len": 12},
+            "ADDNL-PMT-DETL":       {"type": "text",  "len": 32},
+            "FILLER":               {"type": "text"}
+            }
+        },
+  "! P7":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "PHN_NUM":          {"type": "text",  "len": 20},
+            "PASS_CDE":         {"type": "text",  "len": 10},
+            "AMT":              {"type": "text",  "len": 12},
+            "FILLER":           {"type": "text"}
+            }
+        },
+   "! PA":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "CUTOVER-TYPE":          {"type": "text",  "len": 1},
+            "FILLER":                {"type": "text"}
+            }
+        },
+   "! PG":
+        {
+        "type": "tag_len_val",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "tag_id": {"type": "text", "len": 3},
+        "tag_val":{"type": "text", "len":{"type": "indicator", "value":{"len": 3}}},
+        "tags":
+            {
+            "005":
+                {
+                "type": "tag_len_val",
+                "len":{"type": "indicator", "value":{"len": 3}},
+                "tag_id": {"type": "text", "len": 3},
+                "tag_val":{"type": "text", "len":{"type": "indicator", "value":{"len": 3}}}
+                }
+            }
+        },
+   "! PD":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "FIN_NETW_CDE":    {"type": "text",    "len": 3},
+            "BNET_REF_NUM":    {"type": "text",    "len": 9},
+            "SVC_CDE":         {"type": "text",    "len": 3},
+            "CRDHLDR-PRSN-IND":{"type": "text",    "len": 1},
+            "CRD-PRSN-IND":    {"type": "text",    "len": 1},
+            "RESERVED":        {"type": "text",    "len": 45},
+            "FILLER":          {"type": "text"}
+            }
+        },
+   "! PP":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "PAUT-SBTYP":     {"type": "text",    "len": 1},
+            "RSRV-NUM":       {"type": "text",    "len": 12},
+            "RSRV-EXP":       {"type": "text",    "len": 6},
+            "TTL-RSRV_AMT":   {"type": "text",    "len": 18},
+            "RSRV-STAT":      {"type": "text",    "len": 1},
+            "INCR-ALWD_IND":  {"type": "text",    "len": 1},
+            "DECR-ALWD_IND":  {"type": "text",    "len": 1},
+            "REP-CNT":        {"type": "text",    "len": 1},
+            "FILLER":         {"type": "text"}
+            }
+        },
+   "! S2":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "DCC-PRFL":         {"type": "text",    "len": 16},
+            "DCC-STAT":         {"type": "text",    "len": 1},
+            "DCC-SUBSTAT":      {"type": "text",    "len": 1},
+            "FILLER":           {"type": "text"}
+            }
+        },
+   "! S3":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "ISS-DESIGNATOR":     {"type": "text",    "len": 2},
+            "BIN-CRNCY-CDE":      {"type": "text",    "len": 3},
+            "BIN-CRNCY-DESCR":    {"type": "text",    "len": 20},
+            "CNV-RATE-NEUTRAL":   {"type": "text",    "len": 8},
+            "CNV-RATE-EFFECTIVE": {"type": "text",    "len": 8},
+            "CNV-RATE-SRC":       {"type": "text",    "len": 32},
+            "CNV-RATE-DAT":       {"type": "text",    "len": 8},
+            "SAVED-CRNCY-CDE":    {"type": "text",    "len": 3},
+            "PCNT-MARK-UP":       {"type": "text",    "len": 5},
+            "CONVERTED-AMT-1":    {"type": "text",    "len": 19},
+            "CONVERTED-AMT-2":    {"type": "text",    "len": 19},
+            "SAVED-AMT-1":        {"type": "text",    "len": 19},
+            "SAVED-AMT-2":        {"type": "text",    "len": 19},
+            "CONVERTED-ACQ-SURCH":{"type": "text",    "len": 19},
+            "CONVERTED-ISS-SURCH":{"type": "text",    "len": 19},
+            "USER-FLD-ACI":       {"type": "text",    "len": 41},
+            "FILLER":             {"type": "text"}
+
+            }
+        },
+   "! S4":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "DATASET-ID":   {"type": "text",    "len": 2},
+            "LGTH":         {"type": "text",    "len": 4},
+            "SUPPL-DATA":   {"type": "text"}
+            }
+        },
+   "! SC":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "FRMT-CDE":          {"type": "text", "len": 2},
+            "PAN-TKN-DATA":      {"type": "text", "len": 19},
+            "TKN-ASSURANCE-LVL": {"type": "text", "len": 2},
+            "TKN-RQ-ID":         {"type": "text", "len": 11},
+            "PAN-TKN-IND":       {"type": "text", "len": 1},
+            "PAN-TKN-EXP-DAT":   {"type": "text", "len": 4},
+            "TKN-TYP":           {"type": "text", "len": 2},
+            "TXN-TYP":           {"type": "text", "len": 1},
+            "USER-FLD1-ACI":     {"type": "text", "len": 1},
+            "PAN-LAST-FOUR-DGT": {"type": "text", "len": 4},
+            "ACCT-STAT":         {"type": "text", "len": 1},
+            "SPCF-USE":          {"type": "text", "len": 20},
+            "FILLER":            {"type": "text"}
+            }
+        },
+    "! SX":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "FRMT-CDE":   {"type": "text",    "len": 2},
+            "LGTH":       {"type": "text",    "len": 2},
+            "INFO":       {"type": "text"}
+            }
+        },
+    "! DC":
+        {
+        "type": "sequence",
+        "len":
+            {
+            "type": "indicator",
+            "len": 5,
+            "ignore": 1,
+            "ignore_byte": " "
+            },
+        "fields":
+            {
+            "AMT-1":               {"type": "text",    "len": 19},
+            "AMT-2":               {"type": "text",    "len": 19},
+            "AMT-3":               {"type": "text",    "len": 19},
+            "ACQ-CRNCY-CDE":       {"type": "text",    "len": 3},
+            "ISS-CRNCY-CDE":       {"type": "text",    "len": 3},
+            "CONV-RATE":           {"type": "text",    "len": 8},
+            "CONV-RATE-NO-MARKUP": {"type": "text",    "len": 8},
+            "RESPONDER":           {"type": "text",    "len": 1},
+            "USER-FLD-1":          {"type": "text",    "len": 1},
+            "MARKUP":              {"type": "text",    "len": 5},
+            "CONV-RATE-DAT-TIM":   {"type": "text",    "len": 12},
+            "RTTN":                {"type": "text",    "len": 10},
+            "DCC-FLG":             {"type": "text",    "len": 1},
+            "USER-FLD-2":          {"type": "text",    "len": 1}
+            }
+        }
+    }
+}

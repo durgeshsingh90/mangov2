@@ -1,0 +1,152 @@
+{
+    "type": "sequence",
+    "fields":
+    {
+        "xml_header":{"type": "text","len":{"type":"delimiter", "delimiter":"<RTFDataRq>"}},
+        "rtf_data_rq_start_tag":{"type": "text","len":11},
+        "rtf_data_rq":
+            {
+            "type": "sequence",
+            "len":{"type":"delimiter", "delimiter":"</RTFDataRq>"},
+            "fields":
+                {
+                "rq_type_start_tag":{"type": "text","len":8},
+                "rq_type":{"type": "text","len":{"type":"delimiter", "delimiter":"</RqType>"}},
+                "rq_type_end_tag":{"type": "text","len":9},
+
+                "ctx_key_start_tag":{"type": "text","len":8},
+                "ctx_key":{"type": "text","len":{"type":"delimiter", "delimiter":"</Ctxkey>"}},
+                "ctx_key_end_tag":{"type": "text","len":9},
+
+                "uniq_key_start_tag":{"type": "text","len":11},
+                "uniq_key":{"type": "text","len":{"type":"delimiter", "delimiter":"</UniqueKey>"}},
+                "uniq_key_end_tag":{"type": "text","len":12},
+
+                "transaction_id_start_tag":{"type": "text","len":15},
+                "transaction_id":{"type": "text","len":{"type":"delimiter", "delimiter":"</TransactionID>"}},
+                "transaction_id_end_tag":{"type": "text","len":16},
+
+                "version_start_tag":{"type": "text","len":9},
+                "version":{"type": "text","len":{"type":"delimiter", "delimiter":"</Version>"}},
+                "version_end_tag":{"type": "text","len":10},
+
+                "data_start_tag":{"type": "text","len":6},
+                "data":
+                    {
+                    "type": "sequence",
+                    "len":{"type":"delimiter", "delimiter":"</Data>"},
+                    "fields":
+                        {
+                        "headx_dat_tim": {"type": "text", "len":19},
+                        "headx_rec_typ": {"type": "text", "len":2},
+                        "headx_auth_ppd": {"type": "text", "len":4},
+                        "headx_term_ln": {"type": "text", "len":4},
+                        "headx_term_fiid": {"type": "text", "len":4},
+                        "headx_term_term_id": {"type": "text", "len":16},
+                        "headx_crd_ln": {"type": "text", "len":4},
+                        "headx_crd_fiid": {"type": "text", "len":4},
+                        "headx_crd_pan": {"type": "text", "len":19},
+                        "headx_crd_mrb_num": {"type": "text", "len":3},
+                        "headx_brch_id": {"type": "text", "len":4},
+                        "headx_regn_id": {"type": "text", "len":4},
+                        "headx_user_fld1x": {"type": "text", "len":2},
+                        "term_setl_admin_dat_yy":{"type": "text","len":2},
+                        "term_setl_admin_dat_mm":{"type": "text","len":2},
+                        "term_setl_admin_dat_dd":{"type": "text","len":2},
+                        "term_setl_admin_tim_hh":{"type": "text","len":2},
+                        "term_setl_admin_tim_mm":{"type": "text","len":2},
+                        "term_setl_admin_tim_ss":{"type": "text","len":2},
+                        "term_setl_admin_tim_tt":{"type": "text","len":2},
+                        "term_setl_admin_cde":{"type": "text","len":2},
+
+                        "term_setl_hopr_0_contents":{"type": "text","len":2},
+                        "term_setl_hopr_0_beg_cash":{"type": "text","len":19},
+                        "term_setl_hopr_0_cash_incr":{"type": "text","len":19},
+                        "term_setl_hopr_0_cash_decr":{"type": "text","len":19},
+                        "term_setl_hopr_0_cash_out":{"type": "text","len":19},
+                        "term_setl_hopr_0_end_cash":{"type": "text","len":19},
+                        "term_setl_hopr_0_crncy_cde":{"type": "text","len":3},
+                        "term_setl_hopr_0_user_fld":{"type": "text","len":1},
+
+                        "term_setl_hopr_1_contents":{"type": "text","len":2},
+                        "term_setl_hopr_1_beg_cash":{"type": "text","len":19},
+                        "term_setl_hopr_1_cash_incr":{"type": "text","len":19},
+                        "term_setl_hopr_1_cash_decr":{"type": "text","len":19},
+                        "term_setl_hopr_1_cash_out":{"type": "text","len":19},
+                        "term_setl_hopr_1_end_cash":{"type": "text","len":19},
+                        "term_setl_hopr_1_crncy_cde":{"type": "text","len":3},
+                        "term_setl_hopr_1_user_fld":{"type": "text","len":1},
+
+                        "term_setl_hopr_2_contents":{"type": "text","len":2},
+                        "term_setl_hopr_2_beg_cash":{"type": "text","len":19},
+                        "term_setl_hopr_2_cash_incr":{"type": "text","len":19},
+                        "term_setl_hopr_2_cash_decr":{"type": "text","len":19},
+                        "term_setl_hopr_2_cash_out":{"type": "text","len":19},
+                        "term_setl_hopr_2_end_cash":{"type": "text","len":19},
+                        "term_setl_hopr_2_crncy_cde":{"type": "text","len":3},
+                        "term_setl_hopr_2_user_fld":{"type": "text","len":1},
+
+                        "term_setl_hopr_3_contents":{"type": "text","len":2},
+                        "term_setl_hopr_3_beg_cash":{"type": "text","len":19},
+                        "term_setl_hopr_3_cash_incr":{"type": "text","len":19},
+                        "term_setl_hopr_3_cash_decr":{"type": "text","len":19},
+                        "term_setl_hopr_3_cash_out":{"type": "text","len":19},
+                        "term_setl_hopr_3_end_cash":{"type": "text","len":19},
+                        "term_setl_hopr_3_crncy_cde":{"type": "text","len":3},
+                        "term_setl_hopr_3_user_fld":{"type": "text","len":1},
+
+                        "term_setl_hopr_4_contents":{"type": "text","len":2},
+                        "term_setl_hopr_4_beg_cash":{"type": "text","len":19},
+                        "term_setl_hopr_4_cash_incr":{"type": "text","len":19},
+                        "term_setl_hopr_4_cash_decr":{"type": "text","len":19},
+                        "term_setl_hopr_4_cash_out":{"type": "text","len":19},
+                        "term_setl_hopr_4_end_cash":{"type": "text","len":19},
+                        "term_setl_hopr_4_crncy_cde":{"type": "text","len":3},
+                        "term_setl_hopr_4_user_fld":{"type": "text","len":1},
+
+                        "term_setl_hopr_5_contents":{"type": "text","len":2},
+                        "term_setl_hopr_5_beg_cash":{"type": "text","len":19},
+                        "term_setl_hopr_5_cash_incr":{"type": "text","len":19},
+                        "term_setl_hopr_5_cash_decr":{"type": "text","len":19},
+                        "term_setl_hopr_5_cash_out":{"type": "text","len":19},
+                        "term_setl_hopr_5_end_cash":{"type": "text","len":19},
+                        "term_setl_hopr_5_crncy_cde":{"type": "text","len":3},
+                        "term_setl_hopr_5_user_fld":{"type": "text","len":1},
+
+                        "term_setl_num_dep":{"type": "text","len":5},
+                        "term_setl_amt_dep":{"type": "text","len":19},
+                        "term_setl_num_cmrcl_dep":{"type": "text","len":5},
+                        "term_setl_amt_cmrcl_dep":{"type": "text","len":19},
+                        "term_setl_num_pay":{"type": "text","len":5},
+                        "term_setl_amt_pay":{"type": "text","len":19},
+                        "term_setl_num_msg":{"type": "text","len":5},
+                        "term_setl_num_chk":{"type": "text","len":5},
+                        "term_setl_amt_chk":{"type": "text","len":19},
+                        "term_setl_num_log_only":{"type": "text","len":5},
+                        "term_setl_ttl_env":{"type": "text","len":5},
+                        "term_setl_crds_ret":{"type": "text","len":5},
+                        "term_setl_setl_crncy_cde":{"type": "text","len":3},
+                        "term_setl_user_fld7":{"type": "text","len":1},
+                        "term_setl_tim_ofst":{"type": "text","len":5},
+                        "term_setl_setl_area":{"type": "text","len":20},
+                        "tokens": {"type": "schema",  "schema": "TOKENS_RTF"}
+
+                        }
+                },
+                "data_end_tag":{"type": "text","len":7}
+
+
+
+
+
+                }
+            },
+        "rtf_data_rq_end_tag":{"type": "text","len":12}
+
+
+    }
+}
+
+
+
+

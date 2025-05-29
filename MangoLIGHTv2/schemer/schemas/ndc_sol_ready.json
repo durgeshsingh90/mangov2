@@ -1,0 +1,33 @@
+{
+    "type":"delimiter_separated_fields",
+    "delimiter":28,
+    "fields":
+            {
+                "0":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                        "msq_class": {"type": "text", "len": 1},
+                        "msq_sub_class": {"type": "text"}
+                    }
+                },
+                "1":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                        "luno": {"type": "text"}
+
+                    }
+                },
+                "3":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                    "status_desc": {"type": "text"}
+                    }
+                }
+            }
+}

@@ -1,0 +1,51 @@
+{
+    "type": "sequence",
+    "fields":
+    {
+        "xml_header":{"type": "text","len":{"type":"delimiter", "delimiter":"<RTFDataRq>"}},
+        "rtf_data_rq_start_tag":{"type": "text","len":11},
+        "rtf_data_rq":
+            {
+            "type": "sequence",
+            "len":{"type":"delimiter", "delimiter":"</RTFDataRq>"},
+            "fields":
+                {
+                "rq_type_start_tag":{"type": "text","len":8},
+                "rq_type":{"type": "text","len":{"type":"delimiter", "delimiter":"</RqType>"}},
+                "rq_type_end_tag":{"type": "text","len":9},
+
+                "ctx_key_start_tag":{"type": "text","len":8},
+                "ctx_key":{"type": "text","len":{"type":"delimiter", "delimiter":"</Ctxkey>"}},
+                "ctx_key_end_tag":{"type": "text","len":9},
+
+                "uniq_key_start_tag":{"type": "text","len":11},
+                "uniq_key":{"type": "text","len":{"type":"delimiter", "delimiter":"</UniqueKey>"}},
+                "uniq_key_end_tag":{"type": "text","len":12},
+
+                "transaction_id_start_tag":{"type": "text","len":15},
+                "transaction_id":{"type": "text","len":{"type":"delimiter", "delimiter":"</TransactionID>"}},
+                "transaction_id_end_tag":{"type": "text","len":16},
+
+                "version_start_tag":{"type": "text","len":9},
+                "version":{"type": "text","len":{"type":"delimiter", "delimiter":"</Version>"}},
+                "version_end_tag":{"type": "text","len":10},
+
+                "data_start_tag":{"type": "text","len":6},
+                "data":
+                    {
+                    "type": "text",
+                    "len":{"type":"delimiter", "delimiter":"</Data>"}
+
+                },
+                "data_end_tag":{"type": "text","len":7}
+                }
+            },
+        "rtf_data_rq_end_tag":{"type": "text","len":12}
+
+
+    }
+}
+
+
+
+

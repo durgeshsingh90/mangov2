@@ -1,0 +1,230 @@
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 2px; /* Sharper corners for a more formal look */
+  background-color: #fff;
+  padding: 5px 10px; /* Reduced padding for a tighter layout */
+}
+
+.search-icon {
+  margin-right: 10px; /* Space between the icon and the input */
+  color: #333; /* Professional, muted icon color */
+}
+
+.search-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 14px; /* Slightly smaller font for a more refined look */
+  background-color: transparent;
+  color: #333; /* Text color that matches corporate professionalism */
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+/* Enhance focus state with a more corporate color */
+.search-input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 0 1px #0056b3; /* Subtler shadow for focus */
+}
+
+
+.form-label {
+  color: #333;
+  font-size: 18px;
+}
+
+.form-control {
+  width: 100%; /* Ensures the input field fills its container */
+  padding: 6px 15px; /* Comfortable padding around text */
+  margin: 8px 0; /* Margin for spacing between fields */
+  box-sizing: border-box; /* Includes padding and border in the input's total dimensions */
+  border: 1px solid #ccc; /* Subtle, professional border */
+  border-radius: 4px; /* Modern, rounded corners */
+  background-color: #f8f8f8; /* Neutral background */
+  font-family: 'Segoe UI', Arial, sans-serif; /* Professional, legible font */
+  font-size: 16px; /* Optimal size for readability */
+  color: #333; /* Dark color for high contrast and legibility */
+  transition: all 0.3s ease-in-out; /* Smooth transition for interactions */
+}
+
+.form-control:focus {
+  outline: none; /* Removes the default focus outline to avoid distraction */
+  border-color: #4A90E2; /* Brighter border on focus for clear indication */
+  background-color: #fff; /* Slightly lighter background on focus */
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Subtle glow effect to highlight active field */
+}
+
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+    color: #333333;
+}
+
+.ddi {
+    color: rgba(255,255,255,.55);
+}
+
+.ddi:hover {
+    color: #ffc107 !important;
+}
+
+.output-container {
+  padding: 20px;
+  margin-top: 35px;
+  margin-bottom: 55px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.output-container2 {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+textarea.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  resize: none;
+    font-family: monospace;
+}
+
+.d-flex {
+    display: flex!important;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+body, html {
+        margin: 0;
+        padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.full-width-height {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(168, 168, 168);
+}
+
+.buttons {
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+.buttons1 {
+        margin: 20px;
+        display: flex;
+        justify-content: end;
+    }
+.accordion {
+  background-color: #eee;
+  margin-bottom: 3px;
+    margin-top: 3px;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.testcase{
+  background-color: lightgray;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.accordion:hover {
+  font-weight: bold;
+    background-color: rgba(163, 159, 160, 0.6);
+}
+
+.panel {
+  display: none;
+}
+
+ul ul {
+        display: none;
+    }
+
+p{
+    margin-bottom: 3px;
+    margin-left: 10px;
+}
+
+.clicked{
+    background-color: rgba(102, 98, 99, 0.6);
+    font-weight: bold;
+    color:#fff;
+}
+
+.clicked2{
+    background-color: rgba(77, 71, 71, 0.4);
+    font-weight: bold;
+    color:#fff;
+}
+
+
+.arrow {
+  float: right;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  display: inline-block;
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.icon.disk {
+  position: relative;
+  width: 16px; /* Smaller size for button */
+  height: 16px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.icon.disk::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 1px;
+}
+
+.icon.play {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 14px; /* Adjust for smaller size */
+  border-color: transparent transparent transparent white; /* Right-pointing triangle */
+}
+
+.btn-danger {
+  color: white; /* Ensure text color is white for visibility */
+}
+

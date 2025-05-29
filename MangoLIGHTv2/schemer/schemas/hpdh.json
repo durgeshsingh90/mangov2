@@ -1,0 +1,178 @@
+{
+   "type": "sequence",
+
+  "fields":
+    {
+        "tpdu_id":   {"type": "text",    "len": 1, "value": "binary" },
+        "tpdu_dest": {"type": "text",    "len": 2, "value": "binary" },
+        "tpdu_orig": {"type": "text",    "len": 2, "value": "binary" },
+        "mti":      {"type": "numeric", "len": 2, "value": "bcd"},
+        "data_elements":
+        {
+        "type": "bitmap_blocks",
+        "subtype": "weaved",
+        "blocks": [
+            {
+                "next_block_ind_pos": "msbit",
+                "bitmap": { "len": 8, "value": "binary"},
+                "fields": {
+                        "DE002": {"type": "text"   , "len": "lvar_bcd", "unit":"nibble", "value": "binary"},
+                        "DE003": {"type": "text"   , "len": 3, "value": "binary"},
+                        "DE004": {"type": "numeric", "len": 6, "value": "bcd"},
+                        "DE005": {},
+                        "DE006": {},
+                        "DE007": {},
+                        "DE008": {},
+                        "DE009": {},
+                        "DE010": {},
+                        "DE011": {"type": "text"   , "len": 3, "value": "binary"},
+                        "DE012": {"type": "text"   , "len": 3, "value": "binary"},
+                        "DE013": {"type": "text"   , "len": 2, "value": "binary"},
+                        "DE014": {"type": "text"   , "len": 2, "value": "binary"},
+                        "DE015": {},
+                        "DE016": {},
+                        "DE017": {},
+                        "DE018": {},
+                        "DE019": {},
+                        "DE020": {},
+                        "DE021": {},
+                        "DE022": {"type": "text"   , "len": 2, "value": "binary"},
+                        "DE023": {},
+                        "DE024": {"type": "text"   , "len": 2, "value": "binary"},
+                        "DE025": {"type": "text"   , "len": 1, "value": "binary"},
+                        "DE026": {},
+                        "DE027": {},
+                        "DE028": {},
+                        "DE029": {},
+                        "DE030": {},
+                        "DE031": {},
+                        "DE032": {},
+                        "DE033": {},
+                        "DE034": {},
+                        "DE035": {"type": "text"   , "len": "lvar_bcd", "unit":"nibble", "value": "binary"},
+                        "DE036": {},
+                        "DE037": {"type": "text"   , "len": 12},
+                        "DE038": {"type": "text"   , "len": 6},
+                        "DE039": {"type": "text"   , "len": 2},
+                        "DE040": {},
+                        "DE041": {"type": "text"   , "len": 8},
+                        "DE042": {"type": "text"   , "len": 15},
+                        "DE043": {"type": "text"   , "len": 40},
+                        "DE044": {"type": "text"   , "len": 40},
+                        "DE045": {"type": "text"   , "len": "lvar_bcd", "unit":"nibble", "value": "binary"},
+                        "DE046": {},
+                        "DE047": {"type": "text"   , "len": "lvar_bcd", "unit":"nibble", "value": "binary"},
+                        "DE048": {"type": "text"   , "len": "lvar_bcd", "unit":"nibble", "value": "binary"},
+                        "DE049": {},
+                        "DE050": {},
+                        "DE051": {},
+
+                        "DE052": {"type": "text"   , "len": 8,             "value": "binary"},
+                        "DE053": {"type": "text"   , "len": 8,             "value": "binary"},
+                        "DE054": {"type": "text"   , "len": "llvar_bcd"},
+                        "DE055": {
+                                 "type": "tag_len_val",
+                                 "len": "llvar_bcd",
+                                 "tag_id": {"type": "text", "value": "binary", "len": {"type":"ber_tag_id"}},
+                                 "tag_val":{"type": "text", "value": "binary", "len": {"type":"ber_tag_val"}}
+                                 },
+
+                        "DE056": {},
+                        "DE057": {},
+                        "DE058": {},
+                        "DE059": {},
+                        "DE060": {"type": "text"   , "len": "llvar_bcd"},
+                        "DE061": {"type": "text"   , "len": "llvar_bcd"},
+                        "DE062": {"type": "text"   , "len": "llvar_bcd"},
+                        "DE063": {"type": "text"   , "len": "llvar_bcd"},
+                        "DE063": {"type": "len_tag_val",
+                                  "len": "llvar_bcd",
+                                  "tag_id_val_len": "llvar_bcd",
+                                  "tag_id": {"type": "text", "len": 2 },
+                                  "tag_val":{"type": "text"},
+                                  "tags":
+                                  {
+                                    "TP": {
+                                      "type": "sequence",
+                                      "fields": {
+                                        "tp_count": {"type": "text","len": 12},
+                                        "tp_amount": {"type": "text","len": 12},
+                                        "encrypted_crd_details": {"type": "text","len": 16},
+                                        "voucher_num": {"type": "text","len": 11},
+                                        "customer_name": {"type": "text","len": 25},
+                                        "mid": {"type": "text","len": 3},
+                                        "reserved": {"type": "text"}
+                                      }
+                                    },
+                                    "IP": {
+                                      "type": "sequence",
+                                      "fields": {
+                                        "eligible": {"type": "text","len": 1},
+                                        "tenure_1": {"type": "text","len": 2},
+                                        "interest_1": {"type": "text","len": 5},
+                                        "fee_1": {"type": "text","len": 12},
+                                        "fee_type_1": {"type": "text","len": 1},
+                                        "share_rate_1": {"type": "text","len": 5},
+
+                                        "tenure_2": {"type": "text","len": 2},
+                                        "interest_2": {"type": "text","len": 5},
+                                        "fee_2": {"type": "text","len": 12},
+                                        "fee_type_2": {"type": "text","len": 1},
+                                        "share_rate_2": {"type": "text","len": 5},
+
+                                        "tenure_3": {"type": "text","len": 2},
+                                        "interest_3": {"type": "text","len": 5},
+                                        "fee_3": {"type": "text","len": 12},
+                                        "fee_type_3": {"type": "text","len": 1},
+                                        "share_rate_3": {"type": "text","len": 5},
+
+                                        "tenure_4": {"type": "text","len": 2},
+                                        "interest_4": {"type": "text","len": 5},
+                                        "fee_4": {"type": "text","len": 12},
+                                        "fee_type_4": {"type": "text","len": 1},
+                                        "share_rate_4": {"type": "text","len": 5},
+
+                                        "tenure_5": {"type": "text","len": 2},
+                                        "interest_5": {"type": "text","len": 5},
+                                        "fee_5": {"type": "text","len": 12},
+                                        "fee_type_5": {"type": "text","len": 1},
+                                        "share_rate_5": {"type": "text","len": 5},
+
+                                        "selected_tenure": {"type": "text","len": 2},
+                                        "selected_interest": {"type": "text","len": 5},
+                                        "selected_fee": {"type": "text","len": 12},
+                                        "selected_fee_type": {"type": "text","len": 1},
+                                        "selected_share_rate": {"type": "text","len": 5},
+
+                                        "epp_flag": {"type": "text"}
+                                      }
+                                    },
+                                    "DC": {
+                                      "type": "sequence",
+                                      "fields": {
+                                        "amt_1": {"type": "text","len": 12},
+                                        "amt_2": {"type": "text","len": 12},
+                                        "acq_crncy_cde": {"type": "text","len": 3},
+                                        "iss_crncy_cde": {"type": "text","len": 3},
+                                        "conv_rate": {"type": "text","len": 8},
+                                        "conv_responder": {"type": "text","len": 1},
+                                        "user_fld": {"type": "text","len": 1},
+                                        "markup": {"type": "text","len": 5},
+                                        "conv_datetime": {"type": "text","len": 12},
+                                        "stat": {"type": "text","len": 1}
+                                      }
+                                    }
+                                  }
+                                 },
+                        "DE064": {"type": "text"   , "len": 8,             "value":"binary"}
+                }
+            },
+            {
+              "next_block_ind_pos": "msbit",
+                "bitmap": { "len": 8, "value": "binary"},
+                "fields": {}
+            }
+        ]
+        }
+    }
+}

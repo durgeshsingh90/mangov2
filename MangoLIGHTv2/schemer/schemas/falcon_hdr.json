@@ -1,0 +1,14 @@
+{
+    "type": "sequence",
+    "fields":
+    {
+        "eh_app_data_len": {"type": "text",    "len": 8 },
+        "eh_ext_hdr_len":  {"type": "text", "len": 4 },
+        "eh_tran_code":  {"type": "text", "len": 9 },
+        "eh_source":  {"type": "text", "len": 10 },
+        "eh_dest":  {"type": "text", "len": 10 },
+        "eh_error":  {"type": "text", "len": 10 },
+        "eh_filler":  {"type": "text", "len": 1 },
+        "eh_ext_hdr":  {"type": "text", "len": 53 }
+    }
+}

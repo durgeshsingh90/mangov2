@@ -1,0 +1,51 @@
+{
+        "type": "sequence",
+        "fields":
+        {
+            "LEN":                  {"type": "text",    "len": 3},
+            "USER-FLD1":            {"type": "text",    "len": 1},
+            "FIID":                 {"type": "text",    "len": 4},
+            "VER-ID":               {"type": "text",    "len": 2},
+            "LOCAL-TIM":            {"type": "text",    "len": 6},
+            "LOCAL-DAT":            {"type": "text",    "len": 4},
+            "ADVICE-RSN-CDE":       {"type": "text",    "len": 3},
+            "POS-ENTRY-MDE":        {"type": "text",    "len": 3},
+            "RESP-CDE":             {"type": "text",    "len": 2},
+            "CRD-VRFY-RESULT":      {"type": "text",    "len": 1},
+            "VISA-ACCT-STAT-IND":   {"type": "text",    "len": 1},
+            "AUTHN-IND":            {"type": "text",    "len": 1},
+            "USER-FLD-ACI2":        {"type": "text",    "len": 1},
+            "PROC-CDE":             {"type": "text",    "len": 6},
+            "ON-BEHALF":            {"type": "text",    "len": 30},
+
+            "MCHIP-PRO-IND":      {"type": "text",    "len": 2},
+            "MCHIP-PROC-INFO":    {"type": "text",    "len": 1},
+            "TRAN-FEE":           {"type": "text",    "len": 9},
+            "E-COM-SEC-LVL-IND":  {"type": "text",    "len": 3},
+            "AVS-RESULT":         {"type": "text",    "len": 1},
+            "ACCT-NUM-IND":       {"type": "text",    "len": 1},
+            "ADVC-DETL-CDE":      {"type": "text",    "len": 4},
+            "AUTH-AGENT-ID-CDE":  {"type": "text",    "len": 6},
+            "PMNT-TXN-TYP-IND":   {"type": "text",    "len": 3},
+
+            "CHIP-BIT-ERR-RSLTS": {"type": "text",    "len": 50},
+
+            "CRD-LVL-RSLT":          {"type": "text",    "len": 2},
+            "MC-GTWY-TXN-IND":       {"type": "text",    "len": 8},
+            "MC-ASGN-ID-SUB-FLD-32": {"type": "text",    "len": 6},
+            "VPAN":                  {"type": "text",    "len": 19},
+            "RTE-IND":               {"type": "text",    "len": 1},
+            "VISA-MKT-SPCFC-DATA":   {"type": "text",    "len": 1},
+            "NTL-POS-DATA-COND-CDE": {"type": "text",    "len": 11},
+            "PIN-SRV-CDE":           {"type": "text",    "len": 2},
+            "PIN-CAP-CDE":           {"type": "text",    "len": 2},
+            "AUTH-SYS-ADV-DAT-TIM":  {"type": "text",    "len": 10},
+            "FRAUD-DATA-SCORE":      {"type": "text",    "len": 3},
+            "FRAUD-DATA-RSN-CDE":    {"type": "text",    "len": 2},
+            "FRAUD-DATA-RULE-ADJ-SCORE":    {"type": "text",    "len": 3},
+            "FRAUD-DATA-RULE_RSN-CDE-1":    {"type": "text",    "len": 2},
+            "FRAUD-DATA-RULE_RSN-CDE-2":    {"type": "text",    "len": 2},
+            "PMNT-INITIATION-CHAN"     :    {"type": "text",    "len": 2},
+            "FILLER"                   :    {"type": "text"}
+            }
+}

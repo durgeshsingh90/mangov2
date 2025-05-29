@@ -1,0 +1,122 @@
+{
+  "type": "sequence",
+  "fields":
+  {
+    "header"                    : {"type": "text", "len": 6, "value":{ "type":"binary"}},
+    "data":
+    {
+      "type": "tag_len_val",
+      "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+
+      "tag_val":
+      {
+        "type": "tag_len_val",
+        "len": {"type":"ber_tag_val"},
+        "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+        "tag_val":
+        {
+          "type": "tag_len_val",
+          "len": {"type":"ber_tag_val"},
+          "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+          "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}},
+          "tags":
+          {
+            "F1":
+            {
+              "type": "tag_len_val",
+              "len": {"type":"ber_tag_val"},
+              "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+              "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}}
+            },
+            "BF02":
+            {
+              "type": "tag_len_val",
+              "len": {"type":"ber_tag_val"},
+              "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+              "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}}
+            },
+            "F2":
+            {
+              "type": "tag_len_val",
+              "len": {"type":"ber_tag_val"},
+              "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+              "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}}
+            },
+            "F3":
+            {
+              "type": "tag_len_val",
+              "len": {"type":"ber_tag_val"},
+              "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+              "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}}
+            },
+            "F5":
+            {
+              "type": "tag_len_val",
+              "len": {"type":"ber_tag_val"},
+              "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+              "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}},
+              "tags":
+              {
+                "EA":
+                {
+                  "type": "tag_len_val",
+                  "len": {"type":"ber_tag_val"},
+                  "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+                  "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}},
+                  "tags":
+                  {
+                    "EF":
+                    {
+                      "type": "tag_len_val",
+                      "len": {"type":"ber_tag_val"},
+                      "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+                      "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}}
+                    }
+                  }
+                },
+                "EB":
+                {
+                  "type": "tag_len_val",
+                  "len": {"type":"ber_tag_val"},
+                  "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+                  "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}}
+                }
+              }
+            },
+            "F7":
+            {
+              "type": "tag_len_val",
+              "len": {"type":"ber_tag_val"},
+              "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+              "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}}
+            },
+            "FA":
+            {
+              "type": "tag_len_val",
+              "len": {"type":"ber_tag_val"},
+              "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+              "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}}
+            },
+            "FB":
+            {
+              "type": "tag_len_val",
+              "len": {"type":"ber_tag_val"},
+              "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+              "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}},
+              "tags":
+              {
+                "EF":
+                {
+                  "type": "tag_len_val",
+                  "len": {"type":"ber_tag_val"},
+                  "tag_id": {"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_id"}},
+                  "tag_val":{"type": "text", "value":{"type": "binary"}, "len": {"type":"ber_tag_val"}}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

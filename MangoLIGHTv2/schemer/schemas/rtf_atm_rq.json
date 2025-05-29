@@ -1,0 +1,126 @@
+{
+    "type": "sequence",
+    "fields":
+    {
+        "xml_header":{"type": "text","len":{"type":"delimiter", "delimiter":"<RTFDataRq>"}},
+        "rtf_data_rq_start_tag":{"type": "text","len":11},
+        "rtf_data_rq":
+            {
+            "type": "sequence",
+            "len":{"type":"delimiter", "delimiter":"</RTFDataRq>"},
+            "fields":
+                {
+                "rq_type_start_tag":{"type": "text","len":8},
+                "rq_type":{"type": "text","len":{"type":"delimiter", "delimiter":"</RqType>"}},
+                "rq_type_end_tag":{"type": "text","len":9},
+                
+                "ctx_key_start_tag":{"type": "text","len":8},
+                "ctx_key":{"type": "text","len":{"type":"delimiter", "delimiter":"</Ctxkey>"}},
+                "ctx_key_end_tag":{"type": "text","len":9},
+                
+                "uniq_key_start_tag":{"type": "text","len":11},
+                "uniq_key":{"type": "text","len":{"type":"delimiter", "delimiter":"</UniqueKey>"}},
+                "uniq_key_end_tag":{"type": "text","len":12},
+                
+                "transaction_id_start_tag":{"type": "text","len":15},
+                "transaction_id":{"type": "text","len":{"type":"delimiter", "delimiter":"</TransactionID>"}},
+                "transaction_id_end_tag":{"type": "text","len":16},
+                
+                "version_start_tag":{"type": "text","len":9},
+                "version":{"type": "text","len":{"type":"delimiter", "delimiter":"</Version>"}},
+                "version_end_tag":{"type": "text","len":10},
+                
+                "data_start_tag":{"type": "text","len":6},
+                "data":
+                    {
+                    "type": "sequence",
+                    "len":{"type":"delimiter", "delimiter":"</Data>"},
+                    "fields":
+                        {
+                        "headx_dat_tim": {"type": "text", "len":19},
+                        "headx_rec_typ": {"type": "text", "len":2},
+                        "headx_auth_ppd": {"type": "text", "len":4},
+                        "headx_term_ln": {"type": "text", "len":4},
+                        "headx_term_fiid": {"type": "text", "len":4},
+                        "headx_term_term_id": {"type": "text", "len":16},
+                        "headx_crd_ln": {"type": "text", "len":4},
+                        "headx_crd_fiid": {"type": "text", "len":4},
+                        "headx_crd_pan": {"type": "text", "len":19},
+                        "headx_crd_mrb_num": {"type": "text", "len":3},
+                        "headx_brch_id": {"type": "text", "len":4},
+                        "headx_regn_id": {"type": "text", "len":4},
+                        "headx_user_fld1x": {"type": "text", "len":2},
+                        "authx_typ_cde": {"type": "text", "len":2},
+                        "authx_typ": {"type": "text", "len":4},
+                        "authx_rte_stat": {"type": "text", "len":2},
+                        "authx_originator": {"type": "text", "len":1},
+                        "authx_responder": {"type": "text", "len":1},
+                        "authx_entry_tim": {"type": "text", "len":19},
+                        "authx_exit_tim": {"type": "text", "len":19},
+                        "authx_re_entry_tim": {"type": "text", "len":19},
+                        "authx_tran_dat": {"type": "text", "len":6},
+                        "authx_tran_tim": {"type": "text", "len":8},
+                        "authx_post_dat": {"type": "text", "len":6},
+                        "authx_acq_ichg_setl_dat": {"type": "text", "len":6},
+                        "authx_iss_ichg_setl_dat": {"type": "text", "len":6},
+                        "authx_seq_num": {"type": "text", "len":12},
+                        "authx_term_typ": {"type": "text", "len":2},
+                        "authx_tim_ofst": {"type": "text", "len":5},
+                        "authx_acq_inst_id_num": {"type": "text", "len":11},
+                        "authx_rcv_inst_id_num": {"type": "text", "len":11},
+                        "authx_tran_cde_r": {"type": "text", "len":6},
+                        "authx_frmo_acct": {"type": "text", "len":19},
+                        "authx_user_fld1": {"type": "text", "len":1},
+                        "authx_to_acct": {"type": "text", "len":19},
+                        "authx_mult_acct": {"type": "text", "len":1},
+                        "authx_amt_1": {"type": "text", "len":19},
+                        "authx_amt_2": {"type": "text", "len":19},
+                        "authx_amt_3": {"type": "text", "len":19},
+                        "authx_dep_bal_cr": {"type": "text", "len":10},
+                        "authx_dep_typ": {"type": "text", "len":1},
+                        "authx_resp_cde": {"type": "text", "len":3},
+                        "authx_term_name_loc": {"type": "text", "len":25},
+                        "authx_term_owner_name": {"type": "text", "len":22},
+                        "authx_term_city": {"type": "text", "len":13},
+                        "authx_term_st_x": {"type": "text", "len":3},
+                        "authx_term_cntry_x": {"type": "text", "len":2},
+						"authx_orig_oseq_num": {"type": "text", "len":12},
+						"authx_orig_otran_dat": {"type": "text", "len":4},
+						"authx_orig_otran_tim": {"type": "text", "len":8},
+						"authx_orig_b24_post_dat": {"type": "text", "len":4},
+                        "authx_orig_crncy_cde": {"type": "text", "len":3},
+                        "authx_mult_crncy": {"type": "text", "len":41},
+                        "authx_rvsl_rsn": {"type": "text", "len":2},
+                        "authx_pin_ofst": {"type": "text", "len":16},
+                        "authx_shrg_grp": {"type": "text", "len":1},
+                        "authx_dest_order": {"type": "text", "len":1},
+                        "aurhx_auth_id_resp": {"type": "text", "len":6},
+                        "authx_refr": {"type": "text", "len":9},
+                        "authx_dep_setl_imp_flg": {"type": "text", "len":1},
+                        "authx_adj_setl_imp_flg": {"type": "text", "len":1},
+                        "authx_refr_ind": {"type": "text", "len":4},
+                        "authx_user_fld4": {"type": "text", "len":16},
+                        "authx_frwd_inst_id_num": {"type": "text", "len":11},
+                        "authx_crd_accpt_id_num": {"type": "text", "len":11},
+                        "authx_crd_iss_id_num": {"type": "text", "len":11},
+                        "authx_user_fld6": {"type": "text", "len":1},
+                        "tokens": {"type": "schema",  "schema": "TOKENS_RTF"}
+                    }
+                },
+                "data_end_tag":{"type": "text","len":7}
+
+
+
+
+
+                }
+            },
+        "rtf_data_rq_end_tag":{"type": "text","len":12}
+
+
+    }
+}
+
+
+
+

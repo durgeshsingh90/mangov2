@@ -1,0 +1,28 @@
+{
+    "type": "sequence",
+    "fields":
+    {
+        "xml_header":{"type": "text","len":{"type":"delimiter", "delimiter":"<RTFDataRs>"}},
+        "rtf_data_rs_start_tag":{"type": "text","len":11},
+        "rtf_data_rs":
+            {
+            "type": "sequence",
+            "len":{"type":"delimiter", "delimiter":"</RTFDataRs>"},
+            "fields":
+                {
+                "status_start_tag":{"type": "text","len":8},
+                "status":{"type": "text","len":{"type":"delimiter", "delimiter":"</Status>"}},
+                "status_end_tag":{"type": "text","len":9},
+                
+                "ctx_key_start_tag":{"type": "text","len":8},
+                "ctx_key":{"type": "text","len":{"type":"delimiter", "delimiter":"</Ctxkey>"}},
+                "ctx_key_end_tag":{"type": "text","len":9}
+                }
+            },
+        "rtf_data_rs_end_tag":{"type": "text","len":12}
+    }
+}
+
+
+
+

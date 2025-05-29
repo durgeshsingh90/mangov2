@@ -1,0 +1,8 @@
+{
+    "type": "sequence",
+    "fields":
+    {
+        "opt_data": {"type": "text", "len":{"type":"delimiter", "delimiter":"ISO0","consume_delimiter": false}},
+        "header": {"type": "text",    "len": 12 }
+    }
+}

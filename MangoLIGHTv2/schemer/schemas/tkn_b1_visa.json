@@ -1,0 +1,76 @@
+{
+        "type": "sequence",
+        "fields":
+        {
+            "LEN":                {"type": "text",    "len": 3},
+            "USER-FLD1":          {"type": "text",    "len": 1},
+            "FIID":               {"type": "text",    "len": 4},
+            "VER-ID":             {"type": "text",    "len": 2},
+            "NTWK-ID-CDE":        {"type": "text",    "len": 4},
+            "ISS-INST-ID-CDE":    {"type": "text",    "len": 11},
+            "SETL-DAT":           {"type": "text",    "len": 4},
+            "FWD-INST-CDE":       {"type": "text",    "len": 11},
+            "POS-ENTRY-MDE":      {"type": "text",    "len": 4},
+            "RESP-CDE":           {"type": "text",    "len": 2},
+            "PMC-ID":             {"type": "text",    "len": 6},
+            "MRCH-VOL-IND":       {"type": "text",    "len": 2},
+            "INTERNTL-SRV-ASMNT": {"type": "text",    "len": 1},
+            "CRD-RSLTS":          {"type": "text",    "len": 2},
+            "CCDR-IND":           {"type": "text",    "len": 1},
+            "FEE-PGM-IND":        {"type": "text",    "len": 3},
+            "STIP-CDE":           {"type": "text",    "len": 4},
+            "MSG-TYP":            {"type": "text",    "len": 4},
+            "DEF-BILL-IND":       {"type": "text",    "len": 1},
+            "PROC-CDE":           {"type": "text",    "len": 6},
+            "REIMB-ATTR":         {"type": "text",    "len": 1},
+            "ECOMM-GDS-IND":      {"type": "text",    "len": 2},
+            "CAVV-RSLT-CDE":      {"type": "text",    "len": 1},
+            "MRCH-VRFCN-VAL":     {"type": "text",    "len": 10},
+            "TRACE-NUM":          {"type": "text",    "len": 6},
+            "REF-NUM":            {"type": "text",    "len": 12},
+            "OFF-PREMISE":        {"type": "text",    "len": 1},
+            "RSK-SCORE":          {"type": "text",    "len": 2},
+            "RSK-RSN-CDE":        {"type": "text",    "len": 2},
+            "COND-CDE1":          {"type": "text",    "len": 2},
+            "COND-CER-NUM":       {"type": "text",    "len": 2},
+            "COND-CDE3":          {"type": "text",    "len": 2},
+            "DEC-POSN-IND":       {"type": "text",    "len": 6},
+            "AMT-FEES-FEE-TYP":   {"type": "text",    "len": 2},
+            "AMT-FEE-CRNCY-CDE":  {"type": "text",    "len": 3},
+            "AMT-FEE-MINOR-UNIT": {"type": "text",    "len": 1},
+            "AMT-FEE-AMT-SIGN":   {"type": "text",    "len": 1},
+            "AMT-FEE-AMT":        {"type": "text",    "len": 8},
+            "CHIP-TXN-IND":       {"type": "text",    "len": 1},
+            "RESP-SRC-RSN-CDE":   {"type": "text",    "len": 1},
+            "CHRGBCK-RGHTS-IND":  {"type": "text",    "len": 2},
+            "MIS-CAS-CDE":        {"type": "text",    "len": 4},
+            "PRTL-AUTH-IND":      {"type": "text",    "len": 1},
+            "TRAN-FEE-IND":       {"type": "text",    "len": 1},
+            "TRAN-FEE-AMT":       {"type": "text",    "len": 8},
+            "TRAN-CRNCY-CDE":     {"type": "text",    "len": 3},
+
+            "VISA-MONEY-XFER-DATA-WATCH-LIST-MGMT-VALID-CDE": {"type": "text",    "len": 4},
+            "VISA-MONEY-XFER-DATA-WATCH-LIST-MGMT-RSLT-CDE":  {"type": "text",    "len": 3},
+            "VISA-MONEY-XFER-DATA-ACTIVTY-CHK-RSLT":          {"type": "text",    "len": 1},
+
+
+            "ORIG-RESP-CDE":      {"type": "text",    "len": 2},
+            "ADDL-AMT-ACCT-TYP":  {"type": "text",    "len": 2},
+            "ADDL-AMT-TYP":       {"type": "text",    "len": 2},
+            "ADDL-AMT-CRNCY-CDE": {"type": "text",    "len": 3},
+            "ADDL-AMT-SIGN":      {"type": "text",    "len": 1},
+            "ADDL-AMT":           {"type": "text",    "len": 12},
+            "ACCT-ID1":           {"type": "text",    "len": 28},
+            "TERM-TYP":           {"type": "text",    "len": 1},
+
+            "NOT-HONOR-SCA-EXEMPT": {"type": "text",    "len": 24},
+
+            "TRA-SCORE":                  {"type": "text",    "len": 2},
+            "USER-FLD2":                  {"type": "text",    "len": 1},
+            "SPEND-QUALIFIED-IND":        {"type": "text",    "len": 1},
+            "FILLER":                     {"type": "text"}
+
+
+
+            }
+}

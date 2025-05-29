@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Light</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="static/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="icon" type="image/x-icon" href="static/favicon.png">
+    <link rel="stylesheet" href="static/all.css">
+
+    <!-- <link rel="stylesheet" href="static/all.min.css"> -->
+
+</head>
+<body>
+<!--
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid" style="justify-content: flex-end; width: 40%;"><button class="btn btn-danger" type="button" style="padding-inline: 25px; font-weight: bold">EDIT</button></div>
+    <div class="container-fluid" style="justify-content: flex-start;"><button class="btn btn-danger" type="button" style="padding-inline: 25px; font-weight: bold">SAVE</button></div>
+    <div class="container-fluid" style="justify-content: flex-end;"><button class="btn btn-warning" type="button" style="padding-inline: 73px; font-weight: bold" onclick="send_txn()">SEND</button></div>
+    <div class="container-fluid" style="justify-content: flex-end;">
+        <a href="config.html" class="ddi btn" style="font-weight: bold">CONFIG</a>
+    </div>
+  </nav>-->
+
+  <div>
+    <form id="myForm">
+      <div class="row">
+        <div class="col-md-2" style="background-color: rgb(54, 162, 216); padding-inline: 20px; min-height: 100vh">
+            <div class="app-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <div class="app-name" style="font-size: 20px; font-weight: bold; color: white;">Mango-light</div>
+                <div class="settings-icon">
+                    <a href="/config">
+                        <img src="./static/settings.png" alt="Config" width="20" height="20">
+                    </a>
+                </div>
+            </div>
+          <div class="output-container2" style="margin-bottom: 0px;">
+              <div class="row">
+            </div>
+            <div class="search-box">
+                <span class="search-icon">
+                    <!-- Using a simple, professional icon. Adjust the 'fill' color to match corporate branding if necessary. -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </span>
+                <input type="text" class="search-input" placeholder="Search..." id="search" oninput="search_tests()">
+            </div>
+                <!-- <input type="text" class="form-control" style="padding: 0px;" id="search" placeholder="Search" oninput="search_tests()"> -->
+          </div>
+          <div class="output-container2">
+              <div class="row" style="margin-bottom: 4px;">
+            </div>
+
+          <div class="accordion_dynamic" id="mainList">
+          </div>
+
+          </div>
+              <!--
+              <div style="margin: 5px" class="buttons">
+                <button class="btn btn-danger" type="button" style="font-weight: bold;" onclick="save_txn()">SAVE</button>
+              </div>-->
+        </div>
+        <div class="col-md-5" style="background-color: rgb(171, 175, 177); padding-inline: 20px; min-height: 100vh">
+            <div class="output-container2" id="raw" style="margin-bottom: -5px">
+              <div class="row">
+                  <div class="col-md-6">
+                      <input type="text" id="test" class="form-control" placeholder="Test name">
+                  </div>
+                  <div class="col-md-6">
+                      <input type="text" id="testcase" class="form-control" placeholder="Testcase name">
+                  </div>
+            </div>
+          </div>
+            <div class="output-container2" id="raw" style="margin-bottom: -5px">
+              <div class="row">
+            </div>
+                <textarea class="form-control f2" id="out" name="out" rows="4" cols="85" oninput="parse_raw()" style="font-size: small; margin-top: -3px;" placeholder="RAW"></textarea>
+          </div>
+          <div class="output-container2" id="json">
+              <div class="row" style="margin-bottom: 3px;">
+            </div>
+                <textarea class="form-control f2" id="msg" name="msg" rows="30" cols="85" oninput="parse_json()" style="font-size: small; margin-top: -3px; min-height: 74vh" placeholder="JSON"></textarea>
+          </div>
+            <div class="buttons">
+                <button class="btn btn-danger" type="button" style="padding-inline: 73px; font-weight: bold; margin-top: -5px; margin-right: 30px" onclick="save_txn()">
+                    <div class="icon disk"></div> SAVE
+                </button>
+                <button class="btn btn-danger" type="button" style="padding-inline: 73px; font-weight: bold; margin-top: -5px" onclick="send_txn()">
+                    <div class="icon play"></div> SEND
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-5" style="background-color: rgb(171, 175, 177); min-height: 100vh">
+          <div class="output-container2">
+              <div class="row" style="margin-bottom: 3px;">
+            </div>
+                <textarea class="form-control f1" id="txns" name="txns" cols="85" rows="30" style="font-size: small; margin-top: -6px; min-height: 95.5vh; width: 98%"></textarea>
+          </div>
+        </div>
+      </div>
+  </form>
+  </div>
+</body>
+  <script src="static/bootstrap.bundle.min.js"></script>
+    <script>
+let focusedEditor = null;
+let selected_label = "OMNIPAY";
+let search_size = null;
+
+const mainListContainer = document.getElementById('mainList');
+
+const acc = document.getElementsByClassName("accordion");
+let i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+          panel.style.display = "none";
+    } else {
+          panel.style.display = "block";
+    }
+  });
+}
+
+function selected_testcase(btn) {
+    const clicked = document.getElementsByClassName("clicked2");
+    for(i=0;i<clicked.length; i++){
+        clicked[i].classList.remove("clicked2");
+    }
+    btn.classList.add("clicked2");
+}
+
+function selected_test(btn) {
+    const clicked = document.getElementsByClassName("clicked");
+    const clicked2 = document.getElementsByClassName("clicked2");
+    for(i=0;i<clicked.length; i++){
+        clicked[i].classList.remove("clicked");
+    }
+    for(i=0;i<clicked2.length; i++){
+        clicked2[i].classList.remove("clicked2");
+    }
+    btn.classList.add("clicked");
+}
+
+document.addEventListener("DOMContentLoaded", read_test_cases);
+function toggleNestedUL(button) {
+    const ul = button.nextElementSibling;
+    var arrow = button.querySelector(".arrow"); // Use the button reference to find the arrow
+    if (ul.style.display === 'block') {
+        ul.style.display = 'none';
+        button.classList.remove("clicked");
+        arrow.innerHTML = "&#9660;"; // Arrow down
+        clear_workplace(); // Assuming this is a function you've defined elsewhere
+    } else {
+        ul.style.display = 'block';
+        arrow.innerHTML = "&#9650;"; // Arrow up
+        // It's safer to use a separate method to update button text if needed, without overwriting the arrow span
+        // Assuming you want to set some value to inputs without removing the arrow
+        const buttonText = button.childNodes[0].nodeValue.trim(); // Gets the button text excluding the arrow span
+        document.getElementById("test").value = buttonText;
+        document.getElementById("testcase").value = "";
+    }
+}
+
+function clear_workplace(){
+    document.getElementById("test").value = "";
+    document.getElementById("testcase").value = "";
+    document.getElementById("out").value = "";
+    document.getElementById("msg").value = "";
+}
+
+/*
+document.getElementById("msg").addEventListener('click', function (event){
+    document.getElementById("json").style.backgroundColor = "dimgrey";
+    document.getElementById("raw").style.backgroundColor = "darkgrey";
+    focusedEditor = "json";
+});
+
+document.getElementById("out").addEventListener('click', function (event){
+    document.getElementById("json").style.backgroundColor = "darkgrey";
+    document.getElementById("raw").style.backgroundColor = "dimgrey";
+    focusedEditor = "raw";
+});
+
+ */
+
+function trimMsg() {
+    document.getElementById("out").value = document.getElementById("out").value.replace(/\s/g, "");
+}
+function read_test_cases() {
+    let url = 'http://'+window.location.hostname+':5001/read_json/';
+
+    fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: {}
+    })
+    .then(response => response.json())
+    .then(json => {
+        if(json.error) {
+            alert("ERROR: Could not read test_cases.json file.");
+            return;
+        }
+        let json_file = json.result;
+        const mainList = generateList(mainListContainer, json_file);
+        //mainListContainer.appendChild(mainList);
+    })
+    .catch(err => console.log('Error: ', err));
+}
+
+function load_txn(id) {
+    document.getElementById("out").value = id;
+    parse_raw();
+}
+
+function generateList(container, items) {
+    const main = mainListContainer;
+
+    while (main.firstChild) {
+            main.removeChild(main.firstChild);
+        }
+
+    for (const key in items) {
+        if (items.hasOwnProperty(key)) {
+            const item = items[key];
+            const button = document.createElement('button');
+            button.textContent = item.text;
+            button.classList.add('accordion');
+            button.innerHTML = key;
+            button.type = 'button';
+            button.innerHTML = `${key} <span class="arrow">&#9660;</span>`;
+            button.id = key;
+            button.onclick = function() {
+                selected_test(this);
+                toggleNestedUL(this);
+            };
+            const ch = document.createElement('div');
+            ch.classList.add('panel');
+            for (const child_key in items[key]){
+                const label = document.createElement('p');
+                const chi = document.createElement('button');
+                chi.id = items[key][child_key];
+                chi.type = 'button';
+                chi.classList.add('testcase');
+                chi.name = key;
+                chi.innerHTML = child_key;
+                chi.onclick = function() {
+                    load_txn(this.id);
+                    selected_testcase(this);
+                    document.getElementById("test").value = key;
+                    document.getElementById("testcase").value = child_key;
+                };
+                label.appendChild(chi);
+                ch.appendChild(label)
+            }
+            main.appendChild(button);
+            main.appendChild(ch);
+        }
+    }
+    return main;
+}
+
+function search_tests(){
+    let search_value = document.getElementById("search").value;
+    if(search_value === "") {
+        read_test_cases();
+        return;
+    }
+    const tests = document.getElementsByClassName("testcase");
+    for(i=0;i<tests.length;i++){
+        let parent = document.getElementById(tests[i].name);
+        parent.style.display = "block";
+        tests[i].style.display ="block";
+    }
+
+    for(i=0;i<tests.length;i++){
+        let parent = document.getElementById(tests[i].name);
+        if(tests[i].innerHTML.indexOf(search_value) === -1){
+            //did not find substring
+            parent.style.display = "none";
+            tests[i].style.display ="none";
+        }
+    }
+}
+
+function parse_json(){
+    let json = document.getElementById("msg").value;
+
+    let url = 'http://'+window.location.hostname+':5001/parser_json/';
+
+    let data = {
+        msg: json,
+        label: selected_label
+    }
+
+    fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(json => {
+        document.getElementById('out').value = json.result;
+    })
+    .catch(err => console.log('Error: ', err));
+}
+
+function parse_raw() {
+    trimMsg();
+    let raw = document.getElementById("out").value;
+
+    let url = 'http://' + window.location.hostname + ':5001/parser_raw/';
+
+    let data = {
+        msg: raw,
+        label: selected_label
+    }
+
+    fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(json => {
+            document.getElementById('msg').value = JSON.stringify(json.result, null, 4);
+        })
+        .catch(err => console.log('Error: ', err));
+}
+
+function save_txn(){
+    let raw = document.getElementById("out").value;
+    let testcase = document.getElementById("testcase").value;
+    let test = document.getElementById("test").value;
+
+    let url = 'http://'+window.location.hostname+':5001/save_txn/';
+
+    if(test === ""){
+        alert("Test name cannot be empty");
+        return;
+    }
+
+    let data = {
+        testcase: testcase,
+        test: test,
+        txn: raw
+    }
+
+    fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(json => {
+        alert(json.result);
+    })
+    .catch(err => console.log('Error: ', err));
+
+    read_test_cases();
+    read_test_cases();
+}
+
+
+function send_txn(){
+    let raw = document.getElementById("out").value;
+    let txtarea = document.getElementById("txns");
+
+    let url = 'http://'+window.location.hostname+':5001/parser_raw/';
+
+    let data = {
+        msg: raw,
+        label: selected_label
+    }
+
+    fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(json => {
+        document.getElementById("txns").value += "Request:" + "\n";
+        document.getElementById("txns").value += JSON.stringify(json.result, null, 4) + "\n";
+    })
+    .catch(err => console.log('Error: ', err));
+    txtarea.scrollTop = txtarea.scrollHeight;
+
+    url = 'http://'+window.location.hostname+':5001/txn_send/';
+
+    data = {
+        msg: raw,
+        label: selected_label
+    }
+
+    fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(json => {
+        try {
+			console.log(json.data);
+            document.getElementById("txns").value += "Response:" + "\n";
+            for (let i = 0; i < json.data[1].length; i++) {
+                const el = json.data[1][i];
+                document.getElementById("txns").value += JSON.stringify(el[0], null, 4) + "\n";
+            }
+        }
+        catch {
+            console.log(json.result);
+            alert("Could not send. Connection refused.");
+            document.getElementById("txns").value += "NO RESPONSE" + "\n";
+        }
+        txtarea.scrollTop = txtarea.scrollHeight;
+    })
+    .catch(err => console.log('Error: ', err));
+}
+
+    </script>
+</html>

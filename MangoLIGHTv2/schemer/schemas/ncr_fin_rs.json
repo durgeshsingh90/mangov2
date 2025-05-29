@@ -1,0 +1,87 @@
+{
+    "type":"delimiter_separated_fields",
+    "delimiter":28,
+    "fields":
+            {
+                "0":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                        "msq_class": {"type": "text"}
+                    }
+                },
+                "1":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                        "luno": {"type": "text"}
+
+                    }
+                },
+                "3":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                        "next_state_id"  :{"type": "text"}
+                    }
+                },
+                "4":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                    "notes_to_disp": {"type": "text"}
+                    }
+                },
+                "5":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                    "seq_num": {"type": "text","len":4},
+                    "func_id": {"type": "text","len":1},
+                    "screen_data": {"type": "text"}
+                    }
+                },
+                "6":
+                {
+                    "type"  : "sequence",
+                    "fields":
+                    {
+                        "msq_cord_num": {"type": "text", "len": 1},
+                        "crd_return_flg": {"type": "text", "len":1},
+                        "print_data":
+                        {
+                            "type":"delimiter_separated_fields",
+                            "len": {"type": "delimiter",  "delimiter":"\u001C", "consume_delimiter": true},
+                            "delimiter":29,
+                            "fld_val":
+                            {
+                                "type":"sequence",
+                                "fields":
+                                {
+                                    "print_flg": {"type": "text", "len": 1},
+                                    "content": {"type": "text"}
+                                }
+                            }
+                        }
+                    }
+                },
+                "7":
+                {
+                    "type": "schema",
+                    "schema": "NCR_OPT_FLDS",
+                    "msg_type": "rs"
+                },
+                "8":
+                {
+
+                    "type": "schema",
+                    "schema": "NCR_OPT_FLDS",
+                    "msg_type": "rs"
+                }
+            }
+}

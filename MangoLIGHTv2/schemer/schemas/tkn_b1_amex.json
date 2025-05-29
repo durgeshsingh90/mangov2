@@ -1,0 +1,21 @@
+{
+        "type": "sequence",
+        "fields":
+        {
+            "LEN":                  {"type": "text",    "len": 3},
+            "USER-FLD1":            {"type": "text",    "len": 1},
+            "FIID":                 {"type": "text",    "len": 4},
+            "VER":                  {"type": "text",    "len": 2},
+            "APPRV-CDE":            {"type": "text",    "len": 6},
+            "ACT-CDE":              {"type": "text",    "len": 3},
+            "ADNL-RESP-DATA":       {"type": "text",    "len": 25},
+            "PT-SVC-DATA-CDE":      {"type": "text",    "len": 12},
+            "POSTAL-CDE-RESP":      {"type": "text",    "len": 1},
+            "STREET-ADDR-RESP":     {"type": "text",    "len": 1},
+            "CUST-NAM-RESP":        {"type": "text",    "len": 1},
+            "PHN-NUM-RESP":         {"type": "text",    "len": 1},
+            "E-MAIL-RESP":          {"type": "text",    "len": 1},
+            "USR-FLD-ACI":          {"type": "text",    "len": 1},
+            "FILLER":               {"type": "text"}
+            }
+}

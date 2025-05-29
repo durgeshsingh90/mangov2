@@ -1,0 +1,31 @@
+{
+    "type":"delimiter_separated_fields",
+    "delimiter":28,
+    "fld_id":
+    {
+        "type": "text",
+        "len": 1
+    },
+    "id_mapping":
+    {
+        "5":"smart_crd_data"
+
+    },
+    "fields":
+    {
+        "5":
+        {
+            "type": "sequence",
+            "fields":
+            {
+                "icc_data_objs":
+                {
+                    "type": "tag_len_val",
+                    "tag_id": {"type": "text", "value":{"type": "ascii"}, "len": {"type":"ber_tag_id", "value": "ascii"}},
+                    "tag_val":{"type": "text", "value":{"type": "ascii"}, "len": {"type":"ber_tag_val", "value": "ascii"}}
+                }
+            }
+        }
+
+    }
+}

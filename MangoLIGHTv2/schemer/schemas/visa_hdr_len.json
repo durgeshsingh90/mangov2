@@ -1,0 +1,14 @@
+{
+    "type": "sequence",
+    "fields":
+    {
+       "header":
+       {
+         "type": "sequence",
+         "fields":
+         {
+           "len": {"type": "text", "len": 1, "value": {"type": "binary"}}
+         }
+       }
+    }
+}
